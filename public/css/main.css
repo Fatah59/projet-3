@@ -356,6 +356,7 @@ header .fa {
 }
 
 .section-4 h3 {
+    text-align: center;
     color: #737373;
     font-size: 38px;
     line-height: 60px;
@@ -750,6 +751,7 @@ header .fa {
     border-right: 1px solid #cccccc;
     padding-top: 75px;
     padding-bottom: 80px;
+
 }
 
 .page-footer .box-2,

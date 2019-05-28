@@ -51,44 +51,23 @@
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link active" href="accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About us</a>
+                    <a class="nav-link" href="#">A propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    <a class="nav-link" href="chapitres">Chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Support</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">blog</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
     <!--container end-->
 </nav>
-<!--Section-1-->
-<section class="section-1">
-    <div class="jumbotron d-flex align-items-center">
-        <div class="gradient"></div>
-        <div class="container-fluid content">
-            <h1 data-aos="fade-up" data-aos-delay="100">Welcome to more.</h1>
-            <h2 data-aos="fade-up" data-aos-delay="300">the multipurpose psd wordrpess theme</h2>
-            <h4 data-aos="fade-up" data-aos-delay="500">Getup and rise, for the new chapter of your life</h4>
-            <p data-aos="fade-up" data-aos-delay="700"><a href="about.html" class="btn btn-success">Get Started</a></p>
-        </div>
-        <!--container-fluid end-->
-    </div>
-</section>
+
 
 
 
@@ -105,14 +84,7 @@
             <!-- Grid row -->
             <div class="row">
 
-                <!-- Grid column -->
-                <div class="col-lg-5 col-sm-12 mx-auto box-1">
 
-                    <!-- Content -->
-                    <a href="index.html"><img src="public/image/footer-logo.png" alt="footer-logo"></a>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</p>
-
-                </div>
                 <!-- Grid column -->
 
                 <hr class="clearfix w-100 d-md-none">
@@ -121,26 +93,23 @@
                 <div class="col-lg-2 col-sm-4 box-2 mx-auto">
 
                     <!-- Links -->
-                    <h5>Site Navigation</h5>
+                    <h5>Navigation du site</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="index.html">go to home</a>
+                            <a href="accueil">Accueil</a>
                         </li>
                         <li>
-                            <a href="services.html">services</a>
+                            <a href="#">A propos</a>
                         </li>
                         <li>
-                            <a href="portfolio.html">portfolio</a>
+                            <a href="chapitres">Chapitres</a>
                         </li>
                         <li>
-                            <a href="blog.html">read blog</a>
+                            <a href="#">Contact</a>
                         </li>
                         <li>
-                            <a href="contact.html">contact us</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">product support</a>
+                            <a href="#">Connexion</a>
                         </li>
                     </ul>
 

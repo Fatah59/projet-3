@@ -2,19 +2,34 @@
 ob_start();
 ?>
 
+<!--Section-1-->
+<section class="section-1">
+    <div class="jumbotron d-flex align-items-center">
+        <div class="gradient"></div>
+        <div class="container-fluid content">
+            <h1>Bienvenue sur mon Blog</h1>
+            <h2>où vous pourrez découvrir mon dernier roman</h2>
+            <h4>Un Billet simple pour l'Alaska</h4>
+            <p><h4>Chapitre après chapitre</h4></p>
+            <p><a href="about.html" class="btn btn-success">Lire le dernier chapitre</a></p>
+        </div>
+        <!--container-fluid end-->
+    </div>
+</section>
+
 <section class="section-4">
     <div class="container">
+        <h3>Mon dernier roman</h3>
+        <h3>Un billet simple pour l'Alaska</h3>
         <div class="row heading">
+
             <div class="col-sm-6 col-12">
-                <h3>Read our articles<span>We write beautiful blog</span></h3>
+                <a href="chapitres" class="btn btn-success">Lire tous les chapitres</a>
             </div>
-            <div class="col-sm-6 col-12">
-                <a href="blog.html" class="btn btn-success">Read our full blog</a>
-            </div>
-        </div>
+
         <!--/row-->
         <div class="row">
-            <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
+            <div class="col-lg-4 col-sm-12 col-12 box-1">
                 <figure class="figure">
                     <a href="blog.html"><img src="images/blog-1.jpg" class="figure-img img-fluid" alt="blog"></a>
                     <figcaption class="figure-caption">
@@ -24,7 +39,7 @@ ob_start();
                     </figcaption>
                 </figure>
             </div>
-            <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
+            <div class="col-lg-8 col-sm-12 col-12">
                 <div class="row" >
                     <div class="col-sm-6 col-12 box-2">
                         <figure class="figure">
@@ -98,10 +113,10 @@ ob_start();
     <?php endforeach; ?>
 </div>
 
-    <section class="section-6" data-aos="fade-up">
+    <section class="section-6">
         <div class="container">
             <!-- Grid row-->
-            <div class="row main" data-aos="fade-up" data-aos-delay="300">
+            <div class="row main">
                 <!-- Grid column -->
                 <div class="col-lg-6 col-sm-12 col1">
                     <div class="heading">
