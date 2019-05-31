@@ -11,8 +11,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-    <link rel="stylesheet" href="public/css/animate.css">
     <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/animate.css">
+    <link rel="stylesheet" href="public/css/template.css">
 
 
 
@@ -25,10 +26,10 @@
     <div class="container text-white">
         <div class="row">
             <div class="col-sm-4 align-self-center text-left">
-                <!--<h6>Estd 1905</h6>--!>
+                <h6>"L'écriture ma passion !"</h6>
             </div>
             <div class="col-sm-4 col-12 align-self-center box-1 text-center">
-                <a class="navbar-brand" href="accueil"><img src="public/image/header-logo.jpg" alt="logo"></a>
+                <a class="navbar-brand" href="accueil"><img src="public/image/header-logo-jean.jpg" alt="logo"></a>
             </div>
             <div class="col-sm-4 align-self-center text-right">
                 <div class="social-icons">
@@ -54,18 +55,17 @@
                     <a class="nav-link active" href="accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">A propos</a>
+                    <a class="nav-link" href="a-propos">A propos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="chapitres">Chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
-    <!--container end-->
 </nav>
 
 
@@ -84,7 +84,15 @@
             <!-- Grid row -->
             <div class="row">
 
+                <!-- Grid column -->
+                <div class="col-lg-5 col-sm-12 mx-auto box-1">
 
+                    <!-- Content -->
+                    <a href="accueil"><img src="public/image/footer-logo-jean.png" alt="footer-logo"></a>
+                    <p>Vous souhaitez en savoir plus sur moi et mes oeuvres ?</p>
+                    <p>Je vous invite à consulter la rubrique <a href="#">"A propos".</a></p>
+
+                </div>
                 <!-- Grid column -->
 
                 <hr class="clearfix w-100 d-md-none">
@@ -93,23 +101,23 @@
                 <div class="col-lg-2 col-sm-4 box-2 mx-auto">
 
                     <!-- Links -->
-                    <h5>Navigation du site</h5>
+                    <h5>Navigation du Site</h5>
 
                     <ul class="list-unstyled">
                         <li>
                             <a href="accueil">Accueil</a>
                         </li>
                         <li>
-                            <a href="#">A propos</a>
+                            <a href="a-propos">A propos</a>
                         </li>
                         <li>
                             <a href="chapitres">Chapitres</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="contact">Contact</a>
                         </li>
                         <li>
-                            <a href="#">Connexion</a>
+                            <a href="connexion">Connexion</a>
                         </li>
                     </ul>
 
@@ -122,23 +130,14 @@
                 <div class="col-lg-2 col-sm-4 box-3 mx-auto">
 
                     <!-- Links -->
-                    <h5>information</h5>
+                    <h5>informations</h5><br>
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">user login</a>
+                            <a href="mentions-legales">mentions légales</a>
                         </li>
                         <li>
-                            <a href="#!">creat new account</a>
-                        </li>
-                        <li>
-                            <a href="#!">checkout</a>
-                        </li>
-                        <li>
-                            <a href="#!">my cart</a>
-                        </li>
-                        <li>
-                            <a href="#!">other information</a>
+                            <a href="cgu">cgu</a>
                         </li>
                     </ul>
 
@@ -151,27 +150,20 @@
                 <div class="col-lg-2 col-sm-4 box-4 mx-auto">
 
                     <!-- Links -->
-                    <h5>policies & Info</h5>
+                    <h5>mes réseaux sociaux</h5>
 
                     <ul class="list-unstyled">
+                        <div class="social-icons">
                         <li>
-                            <a href="#!">Terms Conditions </a>
+                            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"> Facebook</i></a>
                         </li>
                         <li>
-                            <a href="#!">website polocy</a>
+                            <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"> Twitter</i></a>
                         </li>
                         <li>
-                            <a href="#!">Policy for Sellers </a>
+                            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"> Instagram</i></a>
                         </li>
-                        <li>
-                            <a href="#!">Policy for Buyers</a>
-                        </li>
-                        <li>
-                            <a href="#!">Shipping & Refund </a>
-                        </li>
-                        <li>
-                            <a href="#!">Wholesale Policy</a>
-                        </li>
+                        </div>
                     </ul>
 
                 </div>
@@ -186,7 +178,7 @@
         <!-- Copyright -->
         <div class="footer-copyright text-center">
             <div class="gradient"></div>
-            <p>© 2019, All Rights reserved. designed by<a href="#"> DERRADJ Fatah</a></p>
+            <p>© 2019, All Rights reserved. Designed by<a href="#"> DERRADJ Fatah</a></p>
         </div>
         <!-- Copyright -->
 
@@ -200,8 +192,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+<script src="public/js/animate.js"></script>
+<script src="public/js/custom.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
@@ -209,6 +201,7 @@
     });
 
 </script>
+
 
 </body>
 </html>

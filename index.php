@@ -27,6 +27,9 @@ elseif ($url === 'test-send'){
        header('Location: accueil');
    }
 }
+/*elsif ($url === 'a-propos') {
+
+}*/
 elseif ($url === 'chapitres'){
     $chapters = new ChaptersController();
     $chapters->viewAllChapters();
@@ -35,6 +38,12 @@ elseif ($url === 'chapitre'){
     $chapterController = new ChapterController();
     $chapterController->viewChapter($_GET['id']);
 }
+/*elsif ($url === 'contact'){
+
+}
+elsif ($url === 'connexion'){
+
+}*/
 else {
     echo '404';
 }

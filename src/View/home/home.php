@@ -7,11 +7,11 @@ ob_start();
     <div class="jumbotron d-flex align-items-center">
         <div class="gradient"></div>
         <div class="container-fluid content">
-            <h1>Bienvenue sur mon Blog</h1>
-            <h2>où vous pourrez découvrir mon dernier roman</h2>
-            <h4>Un Billet simple pour l'Alaska</h4>
-            <p><h4>Chapitre après chapitre</h4></p>
-            <p><a href="about.html" class="btn btn-success">Lire le dernier chapitre</a></p>
+            <h1 data-aos="fade-up" data-aos-delay="100">Bienvenue sur mon Blog</h1>
+            <h2 data-aos="fade-up" data-aos-delay="300">Découvrez mon dernier roman</h2>
+            <h4 data-aos="fade-up" data-aos-delay="500">Un Billet simple pour l'Alaska</h4>
+            <p><h4 data-aos="fade-up" data-aos-delay="500">Chapitre après chapitre</h4></p>
+            <p data-aos="fade-up" data-aos-delay="700"><a href="about.html" class="btn btn-success">Lire le dernier chapitre</a></p>
         </div>
         <!--container-fluid end-->
     </div>
@@ -19,17 +19,17 @@ ob_start();
 
 <section class="section-4">
     <div class="container">
-        <h3>Mon dernier roman</h3>
-        <h3>Un billet simple pour l'Alaska</h3>
         <div class="row heading">
-
             <div class="col-sm-6 col-12">
-                <a href="chapitres" class="btn btn-success">Lire tous les chapitres</a>
+                <h3>Découvrez mon livre<span>au fur et à mesure</span></h3>
             </div>
-
+            <div class="col-sm-6 col-12">
+                <a href="chapitres" class="btn btn-success">Lire tous les chapitres publiés</a>
+            </div>
+        </div>
         <!--/row-->
         <div class="row">
-            <div class="col-lg-4 col-sm-12 col-12 box-1">
+            <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
                 <figure class="figure">
                     <a href="blog.html"><img src="images/blog-1.jpg" class="figure-img img-fluid" alt="blog"></a>
                     <figcaption class="figure-caption">
@@ -39,7 +39,7 @@ ob_start();
                     </figcaption>
                 </figure>
             </div>
-            <div class="col-lg-8 col-sm-12 col-12">
+            <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
                 <div class="row" >
                     <div class="col-sm-6 col-12 box-2">
                         <figure class="figure">
@@ -79,6 +79,7 @@ ob_start();
             </div>
         </div>
     </div>
+</section>
     <!--container-->
 
 
@@ -109,7 +110,7 @@ ob_start();
     <p>
         <?= $data->getCreationDate();?>
     </p>
-    <a href="chapitre&id=<?= $data->getId();?>"> Voir la suite </a>
+    <a href="chapitre&id=<?= $data->getId();?>"> Lire la suite </a>
     <?php endforeach; ?>
 </div>
 
@@ -120,14 +121,14 @@ ob_start();
                 <!-- Grid column -->
                 <div class="col-lg-6 col-sm-12 col1">
                     <div class="heading">
-                        <h3>Subscribe to Newsletter</h3>
+                        <h3>Adhérez à ma Newsletter</h3>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col1">
                     <form>
                         <div class="input-group">
-                            <input name="email" id="email" type="email" placeholder="Enter your email id" required>
-                            <button class="btn btn-info" type="submit">Subscribe</button>
+                            <input name="email" id="email" type="email" placeholder="Entrez un email valide" required>
+                            <button class="btn btn-info" type="submit">S'inscrire</button>
                         </div>
                     </form>
                 </div>

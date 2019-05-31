@@ -25,7 +25,20 @@ class ChapterManager extends DbManager
      return $chapters;
     }
 
-    public function getChapter($id)
+    public function getAllChapters()
+    {
+        $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creationDate, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creationDate' );
+        $result = $req->fetchAll(PDO::FETCH_ASSOC);
+        $chapters = [];
+        foreach ($result as $data)
+        {
+            $chapter = new Chapter($data);
+            $chapters[]= $chapter;
+        }
+        return $chapters;
+    }
+
+   /* public function getChapter($id)
     {
         $req = $this->db->prepare('SELECT id, title, text, DATE_FORMAT(creationDate, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter WHERE id=?');
         $req->execute([$id]);
@@ -39,26 +52,26 @@ class ChapterManager extends DbManager
             $chapter->setCreationDate($data['creationDate']);
         }
         return $chapter;
-    }
-        
-    
-/*
-    public function send($title,$text){
-        $req = $this->db->prepare('INSERT INTO chapter(title,text,creationDate) VALUES (?,?, NOW())');
-        $send = $req->execute([$title,$text]);
-        return $send;
-    }
+    }*/
 
-    public function getChapters()
+
+
+    public function getChapterWithComments($id)
     {
-        $req = $this->db->query('SELECT * FROM chapter ORDER BY id DESC');
+        $req = $this->db->prepare('SELECT id, title, text, DATE_FORMAT(creationDate, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ch LEFT JOIN comment com ON com.id=ch.id WHERE ch.id=?');
+        $req->execute([$id]);
+        var_dump($id);
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
-        $chapters = [];
-        foreach ($result as $data){
-            $chapter = new chapter($data);
-            $chapters[]=$chapter;
+        $chapterwithcomments = new Chapter();
+        foreach ($result as $data)
+        {
+            $chapterwithcomments->setId($data['ch.id']);
+            $chapterwithcomments->setTitle($data['title']);
+            $chapterwithcomments->setText($data['text']);
+            $chapterwithcomments->setCreationDate($data['creationDate']);
         }
-        return $chapters;
+        var_dump($chapterwithcomments);
+        return $chapterwithcomments;
+
     }
-}*/
 }

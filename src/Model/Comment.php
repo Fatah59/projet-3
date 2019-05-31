@@ -10,6 +10,10 @@ class Comment
     private $pseudo;
     private $text;
     private $creationDate;
+    private $report;
+    private $moderate;
+    private $chapterId;
+
 
     public function __construct($values = null)
     {
@@ -99,5 +103,54 @@ class Comment
     {
         $this->creationDate = $creationDate;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getReport()
+    {
+        return $this->report;
+    }
+
+    /**
+     * @param mixed $report
+     */
+    public function setReport($report)
+    {
+        $this->report = $report;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModerate()
+    {
+        return $this->moderate;
+    }
+
+    /**
+     * @param mixed $moderate
+     */
+    public function setModerate($moderate)
+    {
+        $this->moderate = $moderate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChapterId()
+    {
+        return $this->chapterId;
+    }
+
+    /**
+     * @param mixed $chapterId
+     */
+    public function setChapterId($chapterId)
+    {
+        $this->chapterId = $chapterId;
+    }
+
 
 }

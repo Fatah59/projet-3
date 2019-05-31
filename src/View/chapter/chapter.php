@@ -7,6 +7,15 @@ ob_start();
 
 <p><?= $result->getCreationDate();?></p>
 
+<?php foreach ($comments as $data) : ?>
+
+<p><?= $data->getPseudo() ;?></p>
+
+<p><?= $data->getText() ;?></p>
+
+<p><?= $data->getCreationDate() ;?></p>
+<hr>
+<?php endforeach; ?>
 
 
 <?php
