@@ -81,7 +81,7 @@ class Comment
     }
 
     /**
-     * @param mixed $text
+     * @param mixed $textc
      */
     public function setText($text)
     {

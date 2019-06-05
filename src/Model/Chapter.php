@@ -10,6 +10,8 @@ class Chapter
     private $title;
     private $text;
     private $creationDate;
+    private $comments = [];
+
 
     public function __construct($values = null)
     {
@@ -98,6 +100,22 @@ class Chapter
     public function setCreationDate($creationDate)
     {
         $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return array
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param array $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
     }
 }
 
