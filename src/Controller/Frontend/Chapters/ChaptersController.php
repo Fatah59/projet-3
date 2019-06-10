@@ -8,10 +8,10 @@ use App\Model\ChapterManager;
 
 class ChaptersController
 {
-public function viewAllChapters(){
-    $chapters = new ChapterManager();
-    $result = $chapters->getAllChapters();
+    public function viewAllChapters(){
+        $chapters = new ChapterManager();
+        $result = $chapters->getAllChapters();
 
-    require 'src/View/chapter/allChapters.php';
-}
+        require 'src/View/chapter/allChapters.php';
+    }
 }

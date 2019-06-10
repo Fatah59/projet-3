@@ -31,63 +31,47 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
                 <figure class="figure">
-                    <a href="blog.html"><img src="images/blog-1.jpg" class="figure-img img-fluid" alt="blog"></a>
-                    <figcaption class="figure-caption">
-                        <h2><a href="blog.html">Beautiful girl holding her camera in neck for a photo shoot</a></h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</p>
-                        <a href="blog_single.html" class="btn btn-success">+ more</a>
-                    </figcaption>
+
+
+
+                        <h2><?= htmlspecialchars($firstChapter->getTitle());?></h2>
+                        <p><?= substr( htmlspecialchars($firstChapter->getText()), 0, 300);?>...</p>
+                        <a href="chapitre&id=<?= $firstChapter->getId();?>" class="btn btn-success">Lire la suite</a>
+
+
                 </figure>
             </div>
             <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
                 <div class="row" >
-                    <div class="col-sm-6 col-12 box-2">
-                        <figure class="figure">
-                            <a href="blog.html"><img src="images/blog-2.jpg" class="figure-img img-fluid" alt="blog"></a>
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-12 box-3">
-                        <h4><a href="blog.html">Girl working seriously on laptop in office hours</a></h4>
-                        <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. specimen book. It has survived not only five</h5>
-                        <a href="blog_single.html" class="btn btn-success">+ more</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-12 box-4">
-                        <figure class="figure">
-                            <a href="blog.html"><img src="images/blog-3.jpg" class="figure-img img-fluid" alt="blog"></a>
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-12 box-5">
-                        <h4><a href="blog.html">Girl working seriously on laptop in office hours </a></h4>
-                        <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. specimen book. It has survived not only five</h5>
-                        <a href="blog_single.html" class="btn btn-success">+ more</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-12 box-6">
-                        <figure class="figure">
-                            <a href="blog.html"><img src="images/blog-1.jpg" class="figure-img img-fluid" alt="blog"></a>
-                        </figure>
-                    </div>
-                    <div class="col-sm-6 col-12 box-7">
-                        <h4><a href="blog.html">Girl working seriously on laptop in office hours </a></h4>
-                        <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. specimen book. It has survived not only five</h5>
-                        <a href="blog_single.html" class="btn btn-success">+ more</a>
+
+                    <div class="col-lg-12 col-sm-6 col-12 box-3">
+                        <div class="chaptershome">
+
+                            <?php foreach ( $result as $data):?>
+                                <p>
+                                <h4><?= htmlspecialchars($data->getTitle());?></h4>
+                                </p>
+                                <p>
+                                    <h5><?= substr( htmlspecialchars($data->getText()), 0, 300);?>...<h5>
+                                </p>
+
+                                <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success"> Lire la suite </a>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
     <!--container-->
+</section>
 
 
 
-<h1>Hello world !</h1>
-<?php if(isset($_SESSION['flash'])) : ?>
-<p><?= $_SESSION['flash']; ?></p>
-<?php unset($_SESSION['flash']); endif;?>
+<!--<h1>Hello world !</h1>
+<php if(isset($_SESSION['flash'])) : ?>
+<p><= $_SESSION['flash']; ?></p>
+<php unset($_SESSION['flash']); endif;?>
 
 <form method="post" action="test-send">
     <label for="pseudo">Pseudo</label>
@@ -100,24 +84,24 @@ ob_start();
 <a href="chapitres">Voir les chapitres</a>
 
 <div>
-    <?php foreach ( $result as $data):?>
+    <php foreach ( $result as $data):?>
     <p>
-        <?= $data->getTitle();?>
+        <= $data->getTitle();?>
     </p>
     <p>
-        <?= $data->getText();?>
+        <= $data->getText();?>
     </p>
     <p>
-        <?= $data->getCreationDate();?>
+        <= $data->getCreationDate();?>
     </p>
-    <a href="chapitre&id=<?= $data->getId();?>"> Lire la suite </a>
-    <?php endforeach; ?>
-</div>
+    <a href="chapitre&id=<= $data->getId();?>"> Lire la suite </a>
+    <php endforeach; ?>
+</div>--!>
 
-    <section class="section-6">
+    <section class="section-6" data-aos="fade-up">
         <div class="container">
             <!-- Grid row-->
-            <div class="row main">
+            <div class="row main" data-aos="fade-up" data-aos-delay="300">
                 <!-- Grid column -->
                 <div class="col-lg-6 col-sm-12 col1">
                     <div class="heading">

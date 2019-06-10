@@ -4,14 +4,10 @@
 namespace App\Model;
 
 
-class Chapter
+class About
 {
     private $id;
-    private $title;
     private $text;
-    private $creation_date;
-    private $comments = [];
-
 
 
 
@@ -59,22 +55,6 @@ class Chapter
     /**
      * @return mixed
      */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getText()
     {
         return $this->text;
@@ -88,39 +68,4 @@ class Chapter
         $this->text = $text;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCreationdate()
-    {
-        return $this->creation_date;
-    }
-
-    /**
-     * @param mixed $creationDate
-     */
-    public function setCreationdate($creation_date)
-    {
-        $this->creation_date = $creation_date;
-    }
-
-    /**
-     * @return array
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * @param array $comments
-     */
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
-    }
 }
-
-
-
-

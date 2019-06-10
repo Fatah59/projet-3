@@ -13,7 +13,7 @@ public function viewChapter($id)
 {
     $getChapter = new ChapterManager();
     $result = $getChapter->getChapterWithComments($id);
-    require "src/View/chapter/chapter.php";
+    require 'src/View/chapter/chapter.php';
 }
 
 }

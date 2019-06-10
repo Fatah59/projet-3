@@ -1,12 +1,12 @@
 <?php
 ob_start();
 ?>
-<div>
+<div class="chapterspage">
     <?php foreach ($result as $data): ?>
-    <p><?= htmlspecialchars($data->getTitle())?></p>
-    <p><?= substr( htmlspecialchars($data->getText()), 0, 150)?>...</p>
-        <p><?= htmlspecialchars($data->getCreationDate())?></p>
-        <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success"> Lire la suite </a>
+    <p><?= htmlspecialchars($data->getTitle());?></p>
+    <p><?= substr( htmlspecialchars($data->getText()), 0, 450)?>...</p>
+        <p><?= htmlspecialchars($data->getCreationDate());?></p>
+        <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success">Lire la suite</a>
     <hr>
     <?php endforeach; ?>
 </div>

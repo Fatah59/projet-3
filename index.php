@@ -27,9 +27,11 @@ elseif ($url === 'test-send'){
        header('Location: accueil');
    }
 }
-/*elsif ($url === 'a-propos') {
+elseif ($url === 'a-propos') {
+    $about = new AboutController();
+    $about->about();
+}
 
-}*/
 elseif ($url === 'chapitres'){
     $chapters = new ChaptersController();
     $chapters->viewAllChapters();
@@ -38,9 +40,12 @@ elseif ($url === 'chapitre'){
     $chapterController = new ChapterController();
     $chapterController->viewChapter($_GET['id']);
 }
-/*elsif ($url === 'contact'){
+elseif ($url === 'contact'){
+    $contact = new ContactController();
+    $contact->contact();
 
 }
+/*
 elsif ($url === 'connexion'){
 
 }*/
