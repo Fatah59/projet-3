@@ -4,13 +4,14 @@
 namespace App\Controller\Frontend\Chapters;
 
 
-use App\Model\TestManager;
+use App\Model\ChapterManager;
 
 class ChaptersController
 {
-public function viewAllChapters(){
-    $manager = new TestManager();
-    $chapters = $manager->getChapters();
-    require 'src/View/chapter/allChapters.php';
-}
+    public function viewAllChapters(){
+        $chapters = new ChapterManager();
+        $result = $chapters->getAllChapters();
+
+        require 'src/View/chapter/allChapters.php';
+    }
 }

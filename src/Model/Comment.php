@@ -1,11 +1,19 @@
 <?php
+
+
 namespace App\Model;
 
-class Test
+
+class Comment
 {
-private $id;
-private $pseudo;
-private $text;
+    private $id;
+    private $pseudo;
+    private $text;
+    private $creationDate;
+    private $report;
+    private $moderate;
+    private $chapterId;
+
 
     public function __construct($values = null)
     {
@@ -14,7 +22,6 @@ private $text;
             $this->hydrate($values);
         }
     }
-
 
     public function hydrate(array $values)
     {
@@ -32,7 +39,6 @@ private $text;
         }
         return $this;
     }
-
 
     /**
      * @return mixed
@@ -75,10 +81,76 @@ private $text;
     }
 
     /**
-     * @param mixed $text
+     * @param mixed $textc
      */
     public function setText($text)
     {
         $this->text = $text;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param mixed $creationDate
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReport()
+    {
+        return $this->report;
+    }
+
+    /**
+     * @param mixed $report
+     */
+    public function setReport($report)
+    {
+        $this->report = $report;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModerate()
+    {
+        return $this->moderate;
+    }
+
+    /**
+     * @param mixed $moderate
+     */
+    public function setModerate($moderate)
+    {
+        $this->moderate = $moderate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChapterId()
+    {
+        return $this->chapterId;
+    }
+
+    /**
+     * @param mixed $chapterId
+     */
+    public function setChapterId($chapterId)
+    {
+        $this->chapterId = $chapterId;
+    }
+
+
 }
