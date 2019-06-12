@@ -22,7 +22,8 @@ ob_start();
               <form>
                   <div class="form-group row">
                       <div class="col-sm-6">
-                          <input type="text" class="form-control" placeholder="Your Name" required>
+                          <label for="inputname">Votre nom</label>
+                          <input type="text" name="name" class="form-control" id="inputname" placeholder="Your Name" required>
                       </div>
                           <div class="col-sm-6">
                           <input type="text" class="form-control" placeholder="Your Email" required>

@@ -14,7 +14,7 @@ class ChapterManager extends DbManager
 
     public function getChaptersForHomepage()
     {
-     $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creation_date FROM chapter ORDER BY creation_date DESC LIMIT 0,3' );
+     $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 0,3' );
      $result = $req->fetchAll(PDO::FETCH_ASSOC);
      $chapters = [];
      foreach ($result as $data)
@@ -27,7 +27,7 @@ class ChapterManager extends DbManager
 
     public function getFirstChapterForHomepage()
     {
-        $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creation_date FROM chapter ORDER BY creation_date ASC LIMIT 0,1' );
+        $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date ASC LIMIT 0,1' );
         $result = $req->fetch(PDO::FETCH_ASSOC);
         $chapter = new Chapter($result);
         return $chapter;
@@ -36,7 +36,7 @@ class ChapterManager extends DbManager
 
     public function getAllChapters()
     {
-        $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creation_date FROM chapter ORDER BY creation_date' );
+        $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date' );
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
         foreach ($result as $data)

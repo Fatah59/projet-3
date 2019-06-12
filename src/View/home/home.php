@@ -31,14 +31,9 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
                 <figure class="figure">
-
-
-
                         <h2><?= htmlspecialchars($firstChapter->getTitle());?></h2>
                         <p><?= substr( htmlspecialchars($firstChapter->getText()), 0, 300);?>...</p>
                         <a href="chapitre&id=<?= $firstChapter->getId();?>" class="btn btn-success">Lire la suite</a>
-
-
                 </figure>
             </div>
             <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
@@ -68,35 +63,7 @@ ob_start();
 
 
 
-<!--<h1>Hello world !</h1>
-<php if(isset($_SESSION['flash'])) : ?>
-<p><= $_SESSION['flash']; ?></p>
-<php unset($_SESSION['flash']); endif;?>
 
-<form method="post" action="test-send">
-    <label for="pseudo">Pseudo</label>
-    <input type="text" id="pseudo" name="pseudo">
-    <label for="text">Texte</label>
-    <input type="text" id="text" name="text">
-    <button type="submit">Valider</button>
-</form>
-
-<a href="chapitres">Voir les chapitres</a>
-
-<div>
-    <php foreach ( $result as $data):?>
-    <p>
-        <= $data->getTitle();?>
-    </p>
-    <p>
-        <= $data->getText();?>
-    </p>
-    <p>
-        <= $data->getCreationDate();?>
-    </p>
-    <a href="chapitre&id=<= $data->getId();?>"> Lire la suite </a>
-    <php endforeach; ?>
-</div>--!>
 
     <section class="section-6" data-aos="fade-up">
         <div class="container">
@@ -109,9 +76,19 @@ ob_start();
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col1">
-                    <form>
+                    <form method="post" action="newsletter-add-mail">
                         <div class="input-group">
-                            <input name="email" id="email" type="email" placeholder="Entrez un email valide" required>
+                            <div>
+                                <?php if(isset($_SESSION['newsletter-error'])): ?>
+                                <p><?= $_SESSION['newsletter-error'] ?></p>
+                                <?php unset($_SESSION['newsletter-error']); ?>
+                                <?php elseif (isset($_SESSION['newsletter-success'])): ?>
+                                    <p><?= $_SESSION['newsletter-success'] ?></p>
+                                    <?php unset($_SESSION['newsletter-success']); ?>
+                                <?php endif; ?>
+
+                            </div>
+                            <input name="newsletter-mail" id="newsletter-mail" type="email" placeholder="Entrez un email valide" required>
                             <button class="btn btn-info" type="submit">S'inscrire</button>
                         </div>
                     </form>
