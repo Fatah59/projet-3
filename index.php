@@ -8,6 +8,7 @@ use App\Controller\Frontend\About\AboutController;
 use App\Controller\Frontend\Contact\ContactController;
 use App\Controller\Frontend\Newsletter\NewsletterController;
 
+
 session_start();
 
 $url = '';
@@ -60,6 +61,23 @@ elseif ($url === 'newsletter-add-mail'){
         $_SESSION['newsletter-error']='Veuillez saisir une adresse email valide';
     }
 }
+
+elseif ($url === 'contact-add-msg') {
+    if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['message']) && !empty($_POST['message'])) {
+        if (preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])) {
+            $contactform = new ContactController();
+            $contactform->newContact($_POST['name'], $_POST['email'], $_POST['message']);
+        } else {
+            $_SESSION['contactmail-error'] = 'Veuillez saisir une adresse email valide';
+            header('Location: contact');
+        }
+    } else {
+        $_SESSION['contactmail-error'] = 'Veuillez saisir une adresse email valide';
+    }
+}
+
+
+
 /*
 elsif ($url === 'connexion'){
 

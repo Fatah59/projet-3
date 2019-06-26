@@ -18,18 +18,20 @@ ob_start();
 </section>
 
 <!-- About Section Start -->
-
-<div id="about-us">
-    <div class="container">
-        <h3>A propos </h3>
-        <div class="row" style="margin-right: 0; margin-left: 0;" data-aos="fade-up" data-aos-delay="300">
-            <div>
-                <img src="images/about.jpg" alt="about-bg" class="thumbnail image">
-                <p><?= $result->getText();?></p>
+<div class="about">
+    <div id="about-us">
+        <div class="container">
+            <h3>A propos </h3>
+            <div class="row" style="margin-right: 0; margin-left: 0;" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <img src="images/about.jpg" alt="about-bg" class="thumbnail image">
+                    <p><?= $result->getText();?></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <!-- About Section End -->

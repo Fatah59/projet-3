@@ -6,14 +6,6 @@ ob_start();
     <p><?= $result->getText();?></p>
     <p><?= $result->getCreationDate(); ?></p>
 
-    <?php foreach ($result->getComments() as $data) : ?>
-        <p><?= $data->getPseudo();?></p>
-        <p><?= $data->getText();?></p>
-        <p><?= $data->getCreationDate();?></p>
-        <a href="#"> Signaler ce commentaire </a>
-        <hr>
-
-    <?php endforeach; ?>
     <form method="post" action="comment_post.php">
         <div class="form-group row">
             <div class="col-sm-6">
@@ -30,6 +22,17 @@ ob_start();
         </div>
         <button type="submit" class="btn btn-primary">Soumettre votre commentaire</button>
     </form>
+    <hr>
+
+    <?php foreach ($result->getComments() as $data) : ?>
+        <p><?= $data->getPseudo();?></p>
+        <p><?= $data->getText();?></p>
+        <p><?= $data->getCreationDate();?></p>
+        <a href="#"> Signaler ce commentaire </a>
+        <hr>
+
+    <?php endforeach; ?>
+
 </div>
 
 <?php

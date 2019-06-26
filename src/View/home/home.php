@@ -31,9 +31,9 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
                 <figure class="figure">
-                        <h2><?= htmlspecialchars($firstChapter->getTitle());?></h2>
-                        <p><?= substr( htmlspecialchars($firstChapter->getText()), 0, 300);?>...</p>
-                        <a href="chapitre&id=<?= $firstChapter->getId();?>" class="btn btn-success">Lire la suite</a>
+                    <h2><?= htmlspecialchars($firstChapter->getTitle());?></h2>
+                    <p><?= substr( htmlspecialchars($firstChapter->getText()), 0, 300);?>...</p>
+                    <a href="chapitre&id=<?= $firstChapter->getId();?>" class="btn btn-success">Lire la suite</a>
                 </figure>
             </div>
             <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
@@ -47,7 +47,7 @@ ob_start();
                                 <h4><?= htmlspecialchars($data->getTitle());?></h4>
                                 </p>
                                 <p>
-                                    <h5><?= substr( htmlspecialchars($data->getText()), 0, 300);?>...<h5>
+                                <h5><?= substr( htmlspecialchars($data->getText()), 0, 300);?>...<h5>
                                 </p>
 
                                 <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success"> Lire la suite </a>
@@ -62,40 +62,37 @@ ob_start();
 </section>
 
 
-
-
-
-    <section class="section-6" data-aos="fade-up">
-        <div class="container">
-            <!-- Grid row-->
-            <div class="row main" data-aos="fade-up" data-aos-delay="300">
-                <!-- Grid column -->
-                <div class="col-lg-6 col-sm-12 col1">
-                    <div class="heading">
-                        <h3>Adhérez à ma Newsletter</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 col1">
-                    <form method="post" action="newsletter-add-mail">
-                        <div class="input-group">
-                            <div>
-                                <?php if(isset($_SESSION['newsletter-error'])): ?>
-                                <p><?= $_SESSION['newsletter-error'] ?></p>
-                                <?php unset($_SESSION['newsletter-error']); ?>
-                                <?php elseif (isset($_SESSION['newsletter-success'])): ?>
-                                    <p><?= $_SESSION['newsletter-success'] ?></p>
-                                    <?php unset($_SESSION['newsletter-success']); ?>
-                                <?php endif; ?>
-
-                            </div>
-                            <input name="newsletter-mail" id="newsletter-mail" type="email" placeholder="Entrez un email valide" required>
-                            <button class="btn btn-info" type="submit">S'inscrire</button>
-                        </div>
-                    </form>
+<section class="section-6" data-aos="fade-up">
+    <div class="container">
+        <!-- Grid row-->
+        <div class="row main" data-aos="fade-up" data-aos-delay="300">
+            <!-- Grid column -->
+            <div class="col-lg-6 col-sm-12 col1">
+                <div class="heading">
+                    <h3>Adhérez à ma Newsletter</h3>
                 </div>
             </div>
+            <div class="col-lg-6 col-sm-12 col1">
+                <form method="post" action="newsletter-add-mail">
+                    <div class="input-group">
+                        <div>
+                            <?php if(isset($_SESSION['newsletter-error'])): ?>
+                                <p><?= $_SESSION['newsletter-error'] ?></p>
+                                <?php unset($_SESSION['newsletter-error']); ?>
+                            <?php elseif (isset($_SESSION['newsletter-success'])): ?>
+                                <p><?= $_SESSION['newsletter-success'] ?></p>
+                                <?php unset($_SESSION['newsletter-success']); ?>
+                            <?php endif; ?>
+
+                        </div>
+                        <input name="newsletter-mail" id="newsletter-mail" type="email" placeholder="Entrez un email valide" required>
+                        <button class="btn btn-info" type="submit">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 

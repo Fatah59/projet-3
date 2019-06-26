@@ -816,7 +816,6 @@ header .fa {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: #fff;
-    margin: 50px 450px 50px 450px;
 }
 
 #about-us h3 {
@@ -941,8 +940,8 @@ header .fa {
 }
 
 #contact .btn-primary:hover {
-    background-color: #b4dc2d;
-    border-color: #b4dc2d;
+    background-color: #2d9ddc;
+    border-color: #2d9ddc;
 }
 
 #contact .form-group {

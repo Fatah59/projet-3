@@ -53,6 +53,8 @@ class ChapterManager extends DbManager
         $req = $this->db->prepare('SELECT ch.id AS ch_id, ch.title, ch.text AS ch_text, DATE_FORMAT(ch.creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creation_date, com.id AS com_id, com.pseudo, com.text AS com_text, com.report, com.moderate, DATE_FORMAT(com.creationDate, "%d/%m/%Y à %Hh:%i:%s") AS com_creationDate FROM chapter ch LEFT JOIN comment com ON com.chapterId=ch.id WHERE ch.id=?');
         $req->execute([$id]);
 
+
+
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $comments = [];
         $chapter = new Chapter();
