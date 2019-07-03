@@ -7,6 +7,7 @@ use App\Controller\Frontend\Chapters\ChapterController;
 use App\Controller\Frontend\About\AboutController;
 use App\Controller\Frontend\Contact\ContactController;
 use App\Controller\Frontend\Newsletter\NewsletterController;
+use App\Controller\Frontend\Comment\CommentController;
 
 
 session_start();
@@ -76,7 +77,28 @@ elseif ($url === 'contact-add-msg') {
     }
 }
 
+elseif ($url === 'comment-post') {
+    if (isset($_POST['pseudo']) && !empty($_POST['pseudo']) && isset($_POST['text']) && !empty($_POST['text']) && isset($_POST['chapterId']) && !empty($_POST['chapterId'])){
+        $commentpost = new CommentController();
+        $commentpost->newComment($_POST['pseudo'], $_POST['text'], $_POST['chapterId']);
+    } else {
+        $_SESSION['commentpost-error'] = 'Veuillez remplir tous les champs';
+        header('Location: chapitre&id='.$_POST['chapterId'].'#commentpost-error');
+    }
+}
 
+elseif ($url === 'signal-comment'){
+    if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
+        if (preg_match('#[0-9]+#', $_GET['com_id']) && preg_match('#[0-9]+#', $_GET['chapter_id'])) {
+            $signal = new CommentController();
+            $signal->signalComment($_GET['com_id'], $_GET['chapter_id']);
+        }else {
+            echo '404';
+        }
+    }else {
+        echo '404';
+    }
+}
 
 /*
 elsif ($url === 'connexion'){

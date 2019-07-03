@@ -6,3 +6,19 @@
     margin: 50px 450px 50px 450px;
 }
 
+.btn-success {
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 20px;
+    background-color: #2d9ddc;
+    border-color: #2d9ddc;
+    border-radius: 100px;
+}
+
+.btn-success:hover,
+.btn-success:not(:disabled):not(.disabled):active {
+    background-color: #000;
+    border-color: #000;
+}
+
+
