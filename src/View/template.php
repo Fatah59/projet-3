@@ -20,7 +20,7 @@
     <title>"Projet 3"</title>
 </head>
 
-<body>
+<main>
 
 <header class="header bg">
     <div class="container text-white">
@@ -71,8 +71,9 @@
 
 
 
-
+<main class="container">
 <?= $content; ?>
+</main>
 
 <section class="section-7">
     <!-- Footer -->
@@ -178,7 +179,7 @@
         <!-- Copyright -->
         <div class="footer-copyright text-center">
             <div class="gradient"></div>
-            <p>© 2019, All Rights reserved. Designed by<a href="#"> DERRADJ Fatah</a></p>
+            <p>© 2019,<a href="mentions-legales">  All Rights reserved.</a></p>
         </div>
         <!-- Copyright -->
 

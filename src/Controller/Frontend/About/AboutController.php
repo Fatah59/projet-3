@@ -11,7 +11,6 @@ class AboutController
     {
         $about = new AboutManager();
         $result = $about->getAbout();
-
         require 'src/View/about/about.php';
     }
 

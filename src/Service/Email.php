@@ -33,13 +33,10 @@ class Email
 
 
             $mail->Subject = 'Vous avez recu un nouveau message !';
-            $mail->Body = 'Email du contact : ' . $email . ' <br />
+            $mail->Body = ' Email du contact : ' . $email . ' <br />
             <br />
-            <h3>' . $name . '</h3> <br />
-            <br />
-            <p> ' . $message . ' </p> <br />
-            <br />
-            ';
+            Nom du contact : ' . $name . ' <br />
+            <p><h3>Message :</h3> '. $message .' </p> <br />';
             $mail->isHTML(true);
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

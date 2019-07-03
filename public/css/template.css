@@ -776,7 +776,7 @@ header .fa {
 }
 
 .footer-copyright p a {
-    color: #8dc63f;
+    color: #2d9ddc;
 }
 
 .page-footer img {
@@ -897,6 +897,7 @@ header .fa {
     padding-bottom: 15px;
     text-transform: capitalize;
     font-weight: 600;
+    text-align: center;
 }
 
 .py-5 {
@@ -912,6 +913,7 @@ header .fa {
     text-align: left;
     line-height: 36px;
     color: rgba(0, 0, 1, 0.54);
+    text-align: center;
 }
 
 #contact .text-left {
