@@ -6,31 +6,20 @@ ob_start();
     <p><?= $_SESSION['flash']; ?></p>
     <?php unset($_SESSION['flash']); endif; ?>
 
-    <style>
-        .jumbotron {
-            width: 100%;
-            height: 250px;
-        }
-
-        .jumbotron h2 {
-            padding-bottom: 0;
-        }
-    </style>
     <!--Section-1-->
     <section class="section-1">
-        <div class="jumbotron d-flex align-items-center">
+        <div class="miniheader d-flex align-items-center">
             <div class="gradient"></div>
             <div class="container-fluid content">
                 <h1 data-aos="fade-right" data-aos-delay="300">Contact</h1>
             </div>
         </div>
     </section>
-
     <!-- Contact section Start -->
     <div id="contact">
         <div class="container">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
-                <div class="col-md-12 text-left">
+                <div class="col-md-12 text-left"><br />
                     <h3>Bienvenue sur mon formulaire de contact</h3>
                 </div>
             </div>
@@ -41,10 +30,10 @@ ob_start();
                     <form method="post" action="contact-add-msg">
                         <div>
                             <?php if (isset($_SESSION['contactmail-error'])): ?>
-                                <p><?= $_SESSION['contactmail-error'] ?></p>
+                                <p><div class="alert alert-danger"><?= $_SESSION['contactmail-error'] ?></p>
                                 <?php unset($_SESSION['contactmail-error']); ?>
                             <?php elseif (isset($_SESSION['contactsend-success'])): ?>
-                                <p><?= $_SESSION['contactsend-success'] ?></p>
+                                <p><div class="alert alert-success"><?= $_SESSION['contactsend-success'] ?></div></p>
                                 <?php unset($_SESSION['contactsend-success']); ?>
                             <?php endif; ?>
                         </div>
@@ -64,10 +53,20 @@ ob_start();
                                           placeholder="Votre message" rows="6" required></textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-xs-12 col-md-8">
-                                <input type="checkbox" name="consent" id="consent"><label for="consent" class="contact-consent">Je consens à ce que mes données soumises soient recueillies et stockées comme décrit par le site.</label>
-                            </div>
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+
+                        <div class="container">
+
+                            <input type="checkbox" name="consent" id="consent">
+
+
+
+                            Je consens à ce que mes données soumises soient recueillies et stockées comme décrit par le site.
+
                         </div>
                         <br/>
                         <button type="submit" class="btn btn-primary">Envoyer</button>
@@ -76,8 +75,6 @@ ob_start();
             </div>
         </div>
     </div>
-
-
     <!-- Contact section Ended -->
 
 <?php

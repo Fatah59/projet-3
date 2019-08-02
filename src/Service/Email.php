@@ -1,12 +1,9 @@
 <?php
 
-
 namespace App\Service;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-
 
 class Email
 {
@@ -19,7 +16,7 @@ class Email
             $mail->SMTPDebug = 2;
             $mail->isSMTP();
             //$mail->isSendmail();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'santa.o2switch.net';
             $mail->SMTPAuth = true;
             $mail->Username = Login::EMAIL;
             $mail->Password = Login::PASSWORD;
@@ -27,10 +24,8 @@ class Email
             $mail->Port = 465;
             $mail->setLanguage('fr', 'src/vendor/phpmailer/phpmailer/language');
 
-
-            $mail->setFrom('derradjfatah@gmail.com', 'Mailer');
-            $mail->addAddress('derradjfatah@gmail.com');
-
+            $mail->setFrom('projet3@derradjfatah.com', 'Projet3 : Blog écrivain');
+            $mail->addAddress('projet3@derradjfatah.com');
 
             $mail->Subject = 'Vous avez recu un nouveau message !';
             $mail->Body = ' Email du contact : ' . $email . ' <br />
@@ -39,7 +34,6 @@ class Email
             <p><h3>Message :</h3> '. $message .' </p> <br />';
             $mail->isHTML(true);
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
             $mail->send();
             echo 'Message has been sent';
         } catch (Exception $e) {

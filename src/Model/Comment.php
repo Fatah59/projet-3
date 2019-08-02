@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Model;
-
 
 class Comment
 {
@@ -151,6 +149,4 @@ class Comment
     {
         $this->chapterId = $chapterId;
     }
-
-
 }

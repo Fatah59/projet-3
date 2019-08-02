@@ -15,34 +15,30 @@
     <link rel="stylesheet" href="public/css/animate.css">
     <link rel="stylesheet" href="public/css/template.css">
 
-
-
     <title>"Projet 3"</title>
 </head>
 
 <main>
-
-<header class="header bg">
-    <div class="container text-white">
-        <div class="row">
-            <div class="col-sm-4 align-self-center text-left">
-                <h6>"L'écriture ma passion !"</h6>
-            </div>
-            <div class="col-sm-4 col-12 align-self-center box-1 text-center">
-                <a class="navbar-brand" href="accueil"><img src="public/image/header-logo-jean.jpg" alt="logo"></a>
-            </div>
-            <div class="col-sm-4 align-self-center text-right">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <header class="header bg">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-sm-4 align-self-center text-left">
+                    <h6>"L'écriture ma passion !"</h6>
+                </div>
+                <div class="col-sm-4 col-12 align-self-center box-1 text-center">
+                    <a class="navbar-brand" href="accueil"><img src="public/image/header-logo-jean.jpg" alt="logo"></a>
+                </div>
+                <div class="col-sm-4 align-self-center text-right">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--/row-->
-    </div>
-    <!--container-->
-</header>
+    </header>
+</main>
 <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
 <nav class="navbar navbar-expand-sm sticky-top navbar-dark">
     <div class="container">
@@ -68,26 +64,19 @@
     </div>
 </nav>
 
-
-
-
-<main class="container">
-<?= $content; ?>
+<main class="containerpage">
+    <?= $content; ?>
 </main>
 
 <section class="section-7">
     <!-- Footer -->
     <footer class="page-footer font-small stylish-color-dark">
-
         <!-- Footer Links -->
         <div class="container text-center text-md-left">
-
             <!-- Grid row -->
             <div class="row">
-
                 <!-- Grid column -->
                 <div class="col-lg-5 col-sm-12 mx-auto box-1">
-
                     <!-- Content -->
                     <a href="accueil"><img src="public/image/footer-logo-jean.png" alt="footer-logo"></a>
                     <p>Vous souhaitez en savoir plus sur moi et mes oeuvres ?</p>
@@ -95,15 +84,11 @@
 
                 </div>
                 <!-- Grid column -->
-
                 <hr class="clearfix w-100 d-md-none">
-
                 <!-- Grid column -->
                 <div class="col-lg-2 col-sm-4 box-2 mx-auto">
-
                     <!-- Links -->
                     <h5>Navigation du Site</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="accueil">Accueil</a>
@@ -121,18 +106,13 @@
                             <a href="connexion">Connexion</a>
                         </li>
                     </ul>
-
                 </div>
                 <!-- Grid column -->
-
                 <hr class="clearfix w-100 d-md-none">
-
                 <!-- Grid column -->
                 <div class="col-lg-2 col-sm-4 box-3 mx-auto">
-
                     <!-- Links -->
                     <h5>informations</h5><br>
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="mentions-legales">mentions légales</a>
@@ -141,50 +121,35 @@
                             <a href="cgu">cgu</a>
                         </li>
                     </ul>
-
                 </div>
                 <!-- Grid column -->
-
                 <hr class="clearfix w-100 d-md-none">
-
                 <!-- Grid column -->
                 <div class="col-lg-2 col-sm-4 box-4 mx-auto">
-
                     <!-- Links -->
                     <h5>mes réseaux sociaux</h5>
-
                     <ul class="list-unstyled">
                         <div class="social-icons">
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"> Facebook</i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"> Twitter</i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"> Instagram</i></a>
-                        </li>
+                            <li>
+                                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"> Facebook</i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"> Twitter</i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"> Instagram</i></a>
+                            </li>
                         </div>
                     </ul>
-
                 </div>
-                <!-- Grid column -->
-
             </div>
-            <!-- Grid row -->
-
         </div>
-        <!-- Footer Links -->
-
         <!-- Copyright -->
         <div class="footer-copyright text-center">
             <div class="gradient"></div>
             <p>© 2019,<a href="mentions-legales">  All Rights reserved.</a></p>
         </div>
-        <!-- Copyright -->
-
     </footer>
-    <!-- Footer -->
 </section>
 
 <!-- Optional JavaScript -->
@@ -200,9 +165,7 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
-
 </script>
-
 
 </body>
 </html>

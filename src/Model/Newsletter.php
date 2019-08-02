@@ -65,5 +65,4 @@ class Newsletter
     {
         $this->email = $email;
     }
-
 }

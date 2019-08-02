@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,13 +15,10 @@
     <link rel="stylesheet" href="public/css/animate.css">
     <link rel="stylesheet" href="public/css/template.css">
 
-
-
     <title>"Projet 3"</title>
 </head>
 
 <body>
-
 <header class="header bg">
     <div class="container text-white">
         <div class="row">
@@ -33,17 +29,16 @@
                 <a class="navbar-brand" href="accueil"><img src="public/image/header-logo-jean.jpg" alt="logo"></a>
             </div>
             <div class="col-sm-4 align-self-center text-right">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <div class="deconnexion">
+
+                    <a href="deconnexion" class="btn btn-primary btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?')">Déconnexion</a>
+
                 </div>
             </div>
         </div>
-        <!--/row-->
     </div>
-    <!--container-->
 </header>
+
 <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
 <nav class="navbar navbar-expand-sm sticky-top navbar-dark">
     <div class="container">
@@ -53,25 +48,21 @@
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="accueil">Accueil</a>
+                    <a class="nav-link active" href="admin">Administration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="a-propos">A propos</a>
+                    <a class="nav-link" href="chapitres-admin">Chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="chapitres">Chapitres</a>
+                    <a class="nav-link" href="commentaires-admin">Commentaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact">Contact</a>
+                    <a class="nav-link" href="signalement-admin">Signalement</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-
-
-
 
 <?= $content; ?>
 
@@ -79,112 +70,12 @@
     <!-- Footer -->
     <footer class="page-footer font-small stylish-color-dark">
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class="col-lg-5 col-sm-12 mx-auto box-1">
-
-                    <!-- Content -->
-                    <a href="accueil"><img src="public/image/footer-logo-jean.png" alt="footer-logo"></a>
-                    <p>Vous souhaitez en savoir plus sur moi et mes oeuvres ?</p>
-                    <p>Je vous invite à consulter la rubrique <a href="#">"A propos".</a></p>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-                <div class="col-lg-2 col-sm-4 box-2 mx-auto">
-
-                    <!-- Links -->
-                    <h5>Navigation du Site</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="accueil">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="a-propos">A propos</a>
-                        </li>
-                        <li>
-                            <a href="chapitres">Chapitres</a>
-                        </li>
-                        <li>
-                            <a href="contact">Contact</a>
-                        </li>
-                        <li>
-                            <a href="connexion">Connexion</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-                <div class="col-lg-2 col-sm-4 box-3 mx-auto">
-
-                    <!-- Links -->
-                    <h5>informations</h5><br>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="mentions-legales">mentions légales</a>
-                        </li>
-                        <li>
-                            <a href="cgu">cgu</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-                <div class="col-lg-2 col-sm-4 box-4 mx-auto">
-
-                    <!-- Links -->
-                    <h5>mes réseaux sociaux</h5>
-
-                    <ul class="list-unstyled">
-                        <div class="social-icons">
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"> Facebook</i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"> Twitter</i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"> Instagram</i></a>
-                        </li>
-                        </div>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
         <!-- Copyright -->
         <div class="footer-copyright text-center">
             <div class="gradient"></div>
-            <p>© 2019, All Rights reserved. Designed by<a href="#"> DERRADJ Fatah</a></p>
+            <p>© 2019,<a href="mentions-legales">  All Rights reserved.</a></p>
         </div>
-        <!-- Copyright -->
-
     </footer>
-    <!-- Footer -->
 </section>
 
 <!-- Optional JavaScript -->
@@ -200,10 +91,7 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
-
 </script>
-
-
 </body>
 </html>
 

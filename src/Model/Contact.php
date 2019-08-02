@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Model;
-
 
 class Contact
 {
@@ -150,6 +148,4 @@ class Contact
     {
         $this->consent = $consent;
     }
-
-
 }

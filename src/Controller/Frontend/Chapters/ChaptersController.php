@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller\Frontend\Chapters;
-
 
 use App\Model\ChapterManager;
 

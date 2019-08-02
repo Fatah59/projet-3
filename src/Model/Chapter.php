@@ -12,9 +12,6 @@ class Chapter
     private $creation_date;
     private $comments = [];
 
-
-
-
     public function __construct($values = null)
     {
         if ($values != null)

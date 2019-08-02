@@ -1,10 +1,3 @@
-.chaptershome {
-    margin-left: 100px;
-}
-
-.chapterspage, .onechapter, .about {
-    margin: 50px 450px 50px 450px;
-}
 
 .btn-success {
     color: #fff;
@@ -21,4 +14,58 @@
     border-color: #000;
 }
 
+.miniheader {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    text-transform: uppercase;
+    background-image: url(../image/index-alaska.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.miniheader h1{
+    color: #ffffff;
+}
 
+.miniheader .btn-success,
+.miniheader .btn-success:not(:disabled):not(.disabled):active {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 8px 35px;
+    background-color: #2d9ddc;
+    border-color: #2d9ddc;
+    border: 2px solid #f8f9fa;
+}
+
+.miniheader .btn-success:hover {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #2d9ddc;
+}
+
+.admintitle {
+    text-align: center;
+    margin: 20px;
+}
+
+.success {
+    color: #28a745;
+}
+
+.report-table, .comment-table {
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+}

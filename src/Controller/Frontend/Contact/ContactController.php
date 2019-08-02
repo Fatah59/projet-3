@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Frontend\Contact;
 
 use App\Model\Contact;
@@ -25,5 +24,4 @@ class ContactController
         $_SESSION['contactsend-success']="Votre message a bien été envoyé";
         header('Location: contact');
     }
-
 }

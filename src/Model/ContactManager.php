@@ -1,9 +1,7 @@
 <?php
 
-
 namespace App\Model;
 use \PDO;
-
 
 class ContactManager extends DbManager
 {
@@ -22,5 +20,4 @@ class ContactManager extends DbManager
         ]);
         return $addcontact;
     }
-
 }

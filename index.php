@@ -6,8 +6,16 @@ use App\Controller\Frontend\Chapters\ChaptersController;
 use App\Controller\Frontend\Chapters\ChapterController;
 use App\Controller\Frontend\About\AboutController;
 use App\Controller\Frontend\Contact\ContactController;
+use App\Controller\Frontend\Legalmention\LegalController;
+use App\Controller\Frontend\Cgu\CguController;
 use App\Controller\Frontend\Newsletter\NewsletterController;
 use App\Controller\Frontend\Comment\CommentController;
+use App\Controller\Frontend\Connexion\ConnexionController;
+use App\Controller\Backend\Admin\AdminController;
+use App\Controller\Backend\Comment\AdminCommentController;
+use App\Controller\Backend\Disconnect\DisconnectController;
+use App\Controller\Backend\Chapter\AdminChapterController;
+use App\Controller\Backend\Report\ReportController;
 
 
 session_start();
@@ -19,19 +27,10 @@ if (isset($_GET['url'])) {
 }
 
 if ($url === 'accueil'){
-$home = new HomeController();
-$home->home();
+    $home = new HomeController();
+    $home->home();
 }
-elseif ($url === 'test-send'){
-   if (isset($_POST['pseudo']) && isset ($_POST['text']) && !empty($_POST['pseudo']) && !empty($_POST['text'])){
-       $home = new HomeController();
-       $home->testSend($_POST['pseudo'], $_POST['text']);
-   }else {
 
-       $_SESSION['flash']='Veuillez saisir tous les champs';
-       header('Location: accueil');
-   }
-}
 elseif ($url === 'a-propos') {
     $about = new AboutController();
     $about->about();
@@ -41,13 +40,30 @@ elseif ($url === 'chapitres'){
     $chapters = new ChaptersController();
     $chapters->viewAllChapters();
 }
-elseif ($url === 'chapitre'){
-    $chapterController = new ChapterController();
-    $chapterController->viewChapter($_GET['id']);
-}
+
 elseif ($url === 'contact'){
     $contact = new ContactController();
     $contact->contact();
+}
+
+elseif ($url === 'mentions-legales'){
+    $legal = new LegalController();
+    $legal->legal();
+}
+
+elseif ($url === 'cgu'){
+    $cgu = new CguController();
+    $cgu->cgu();
+}
+
+elseif ($url === 'dernier-chapitre'){
+    $lastChapter = new HomeController();
+    $lastChapter->getLastChapter();
+}
+
+elseif ($url === 'chapitre'){
+    $chapterController = new ChapterController();
+    $chapterController->viewChapter($_GET['id']);
 }
 
 elseif ($url === 'newsletter-add-mail'){
@@ -93,19 +109,162 @@ elseif ($url === 'signal-comment'){
             $signal = new CommentController();
             $signal->signalComment($_GET['com_id'], $_GET['chapter_id']);
         }else {
-            echo '404';
+            require 'src/View/error404/error404.php';
         }
     }else {
-        echo '404';
+        require 'src/View/error404/error404.php';
     }
 }
 
-/*
-elsif ($url === 'connexion'){
+elseif ($url === 'connexion'){
+    $contact = new ConnexionController();
+    $contact->connexionPage();
+}
 
-}*/
+elseif ($url === 'admincheck') {
+    if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
+        $connexionadmin = new ConnexionController();
+        $connexionadmin->newConnexionAdmin($_POST['username'], $_POST['password']);
+    } else {
+        $_SESSION['connexion-error'] = 'Veuillez saisir tous les champs';
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'admin') {
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])){
+        $adminConnect = new AdminController();
+        $adminConnect->adminConnect();
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'deconnexion'){
+    $disconnect = new DisconnectController();
+    $disconnect->disconnectUser();
+}
+
+elseif ($url === 'chapitres-admin'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $chapteredit = new AdminChapterController;
+        $chapteredit->adminChapter();
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'ajout-chapitre'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $addchapter = new AdminChapterController();
+        $addchapter->newChapterForm();
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'chapter-post') {
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        if (isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['text']) && !empty($_POST['text'])) {
+            $chapterpost = new AdminChapterController();
+            $chapterpost->newChapter($_POST['title'], $_POST['text']);
+        } else {
+            $_SESSION['chapterpost-error'] = 'Veuillez remplir tous les champs';
+            header('Location: ajout-chapitre');
+        }
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'editer-chapitre'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $editchapter = new AdminChapterController();
+        $editchapter->editChapterForm($_GET['id']);
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'chapter-edited') {
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])){
+        if (isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['text']) && !empty($_POST['text']) && isset($_POST['chapterId']) && !empty($_POST['chapterId'])){
+            $chapteredited = new AdminChapterController();
+            $chapteredited->editedChapter($_POST['title'], $_POST['text'], $_POST['chapterId']);
+        } else {
+            $_SESSION['chapteredit-error'] = 'Veuillez remplir tous les champs';
+            header('Location: editer-chapitre&id='.$_POST['chapterId']);
+        }
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'supprimer-chapitre'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $deletechapter = new AdminChapterController();
+        $deletechapter->removeChapter($_GET['id']);
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'commentaires-admin'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $comment = new AdminCommentController;
+        $comment->commentList();
+    }else {
+        header('Location: connexion');
+    }
+}
+
+
+
+elseif ($url === 'signalement-admin'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        $report = new ReportController;
+        $report->report();
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'retirer-signalement'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
+            if (preg_match('#[0-9]+#', $_GET['com_id']) && preg_match('#[0-9]+#', $_GET['chapter_id'])) {
+                $signal = new CommentController();
+                $signal->removeSignal($_GET['com_id'], $_GET['chapter_id']);
+            }else {
+                require 'src/View/error404/error404.php';
+            }
+        }else {
+            require 'src/View/error404/error404.php';
+        }
+    }else {
+        header('Location: connexion');
+    }
+}
+
+elseif ($url === 'moderer-signalement'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
+            if (preg_match('#[0-9]+#', $_GET['com_id']) && preg_match('#[0-9]+#', $_GET['chapter_id'])) {
+                $signal = new CommentController();
+                $signal->moderateSignal($_GET['com_id'], $_GET['chapter_id']);
+            }else {
+                require 'src/View/error404/error404.php';
+            }
+        }else {
+            require 'src/View/error404/error404.php';
+        }
+    }else {
+        header('Location: connexion');
+    }
+}
+
 else {
-    echo '404';
+    require 'src/View/error404/error404.php';
 }
 
 
