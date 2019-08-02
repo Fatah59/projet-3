@@ -32,14 +32,6 @@ class ChapterManager extends DbManager
         return $chapter;
     }
 
-    /* public function getLastChapter()
-     {
-         $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 0,1' );
-         $result = $req->fetch(PDO::FETCH_ASSOC);
-         $lastchapter = new Chapter($result);
-         return $lastchapter;
-     }*/
-
     public function getAllChapters()
     {
         $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date' );

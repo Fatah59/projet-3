@@ -56,11 +56,6 @@ elseif ($url === 'cgu'){
     $cgu->cgu();
 }
 
-elseif ($url === 'dernier-chapitre'){
-    $lastChapter = new HomeController();
-    $lastChapter->getLastChapter();
-}
-
 elseif ($url === 'chapitre'){
     $chapterController = new ChapterController();
     $chapterController->viewChapter($_GET['id']);

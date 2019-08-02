@@ -10,7 +10,8 @@ ob_start();
             <h2 data-aos="fade-up" data-aos-delay="300">Découvrez mon dernier roman</h2>
             <h4 data-aos="fade-up" data-aos-delay="500">Un Billet simple pour l'Alaska</h4>
             <p><h4 data-aos="fade-up" data-aos-delay="500">Chapitre après chapitre</h4></p>
-            <p data-aos="fade-up" data-aos-delay="700"><a href="about.html" class="btn btn-success">Lire le dernier chapitre</a></p>
+            <p data-aos="fade-up" data-aos-delay="700"><a href="chapitre&id=<?= $result [0]->getId() ?>" class="btn btn-success">Lire le dernier chapitre</a></p>
+
         </div>
     </div>
 </section>
