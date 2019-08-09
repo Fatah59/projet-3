@@ -21,12 +21,12 @@ ob_start();
 
     <form method="post" action="chapter-edited">
         <?php foreach ($result as $data): ?>
-        <input type="text" name="title" class="form-control" id="title" value="<?= ($data->getTitle());?>"
-               required><br>
-        <textarea name="text" id="textarea-tinymce"><?= ($data->getText());?>
+            <input type="text" name="title" class="form-control" id="title" value="<?= ($data->getTitle());?>"
+                   required><br>
+            <textarea name="text" id="textarea-tinymce"><?= ($data->getText());?>
         </textarea><br>
             <input type="hidden" name="chapterId" value="<?php echo $data->getId(); ?>"/>
-        <button type="submit" class="btn btn-primary">Publier</button>
+            <button type="submit" class="btn btn-primary">Publier</button>
         <?php endforeach;?>
     </form><br>
     <hr>

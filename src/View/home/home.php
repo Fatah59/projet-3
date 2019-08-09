@@ -15,7 +15,7 @@ ob_start();
         </div>
     </div>
 </section>
-
+<!-- Section-4 -->
 <section class="section-4">
     <div class="container">
         <div class="row heading">
@@ -25,8 +25,10 @@ ob_start();
             <div class="col-sm-6 col-12">
                 <a href="chapitres" class="btn btn-success">Lire tous les chapitres publiés</a>
             </div>
-        </div>
+        </div><hr>
+        <!-- Chapter extract -->
         <div class="row">
+            <!-- First Chapter extract -->
             <div class="col-lg-4 col-sm-12 col-12 box-1"  data-aos="fade-right" data-aos-delay="300">
                 <figure class="figure">
                     <h2><strong><?= htmlspecialchars($firstChapter->getTitle());?></strong></h2>
@@ -34,11 +36,11 @@ ob_start();
                     <a href="chapitre&id=<?= $firstChapter->getId();?>" class="btn btn-success">Lire la suite</a>
                 </figure>
             </div>
+            <!-- Lastest Chapter -->
             <div class="col-lg-8 col-sm-12 col-12" data-aos="fade-left" data-aos-delay="300">
                 <div class="row" >
                     <div class="col-lg-12 col-sm-6 col-12 box-3">
                         <div class="chaptershome">
-
                             <?php foreach ( $result as $data):?>
                                 <p>
                                 <h4><strong><?= htmlspecialchars($data->getTitle());?></strong></h4>
@@ -55,7 +57,7 @@ ob_start();
         </div>
     </div>
 </section>
-
+<!-- Newsletter -->
 <section class="section-6" data-aos="fade-up">
     <div class="container">
         <div class="row main" data-aos="fade-up" data-aos-delay="300">

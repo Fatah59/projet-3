@@ -13,16 +13,14 @@ class Comment
     private $chapterId;
 
 
-    public function __construct($values = null)
-    {
+    public function __construct($values = null){
         if ($values != null)
         {
             $this->hydrate($values);
         }
     }
 
-    public function hydrate(array $values)
-    {
+    public function hydrate(array $values){
         foreach ($values as $key => $value)
         {
             $elements = explode("_", $key);

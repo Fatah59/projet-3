@@ -12,5 +12,4 @@ class AdminCommentController
         $result = $commentsdisplay->getAllComments();
         require 'src/View/admin/comment/adminComment.php';
     }
-
 }

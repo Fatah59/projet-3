@@ -55,7 +55,6 @@ ob_start();
         <?php endforeach; ?>
     </section>
 
-
 <?php
 $content = ob_get_clean();
 require 'src/View/templateAdmin.php';

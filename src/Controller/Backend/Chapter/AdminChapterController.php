@@ -12,9 +12,11 @@ class AdminChapterController
         $result = $chapters->getAllChapters();
         require 'src/View/admin/chapter/adminChapter.php';
     }
+
     public function newChapterForm(){
         require 'src/View/admin/chapter/addChapter.php';
     }
+
     public function newChapter($title, $text){
         $chapterposted = new Chapter();
         $chapterposted->setTitle($title);
@@ -48,6 +50,4 @@ class AdminChapterController
         $_SESSION['chapterdeleted-success']="Votre chapitre a bien été supprimé";
         header('Location: chapitres-admin');
     }
-
-
 }

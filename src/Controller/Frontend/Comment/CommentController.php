@@ -36,7 +36,6 @@ class CommentController
         $signalcomment->removeSignalComment($commentsignaled);
         $_SESSION['removesignalcomment-success']="Le signalement a bien été retiré";
         header('Location: signalement-admin');
-
     }
 
     public function moderateSignal($com_id, $chapter_id){
@@ -47,10 +46,7 @@ class CommentController
         $signalmoderate->moderateSignalComment($commentmoderate);
         $_SESSION['moderatesignalcomment-success']="Le commentaire a bien été modéré";
         header('Location: signalement-admin');
-
     }
-
-
 }
 
 

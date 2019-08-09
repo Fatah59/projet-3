@@ -22,8 +22,7 @@ class CommentManager extends DbManager
         return $addcomment;
     }
 
-    public function getAllComments()
-    {
+    public function getAllComments(){
         $req = $this->db->query('SELECT id, pseudo, text, creationDate, chapterId FROM comment WHERE report=0 && moderate=0 ORDER BY creationDate DESC LIMIT 0,30' );
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $comments = [];
@@ -37,9 +36,7 @@ class CommentManager extends DbManager
 
     public function addSignalComment(Comment $signalcomment){
         $req=$this->db->prepare('UPDATE comment SET report = 1 WHERE id=?');
-        $addsignal=$req->execute([
-            $signalcomment->getId(),
-        ]);
+        $addsignal=$req->execute([$signalcomment->getId()]);
         return $addsignal;
     }
 
@@ -56,7 +53,6 @@ class CommentManager extends DbManager
     }
 
     public function getAllReport(){
-
         $req = $this->db->query('SELECT id, text, creationDate, chapterId FROM comment WHERE report=1 && moderate=0 ORDER BY creationDate DESC LIMIT 0,10' );
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $reports = [];
@@ -70,17 +66,13 @@ class CommentManager extends DbManager
 
     public function removeSignalComment(Comment $signalcomment){
         $req=$this->db->prepare('UPDATE comment SET report = 0 WHERE id=?');
-        $removesignal=$req->execute([
-            $signalcomment->getId(),
-        ]);
+        $removesignal=$req->execute([$signalcomment->getId(),]);
         return $removesignal;
     }
 
     public function moderateSignalComment(Comment $signalmoderate){
         $req=$this->db->prepare('UPDATE comment SET moderate = 1 WHERE id=?');
-        $moderatesignal=$req->execute([
-            $signalmoderate->getId(),
-        ]);
+        $moderatesignal=$req->execute([$signalmoderate->getId(),]);
         return $moderatesignal;
     }
 }

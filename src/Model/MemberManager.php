@@ -19,6 +19,5 @@ class MemberManager extends DbManager
         $req->execute([$member->getLogin()]);
         $result= $req->fetch(PDO::FETCH_ASSOC);
         return $result;
-
     }
 }

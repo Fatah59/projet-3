@@ -59,8 +59,6 @@ ob_start();
         </div>
     </section>
 
-
-
 <?php
 $content = ob_get_clean();
 require 'src/View/templateAdmin.php';

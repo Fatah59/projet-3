@@ -56,9 +56,9 @@ ob_start();
         <?php foreach ($result->getComments() as $data) : ?>
             <p><strong><u><?= $data->getPseudo();?></u></strong></p>
             <p><?php if ($data->getModerate()){
-                echo "Ce commentaire a été modéré par l'administrateur du site.";
+                    echo "Ce commentaire a été modéré par l'administrateur du site.";
                 }elseif ($data->getReport()){
-                echo "Ce commentaire a été signalé à l'administrateur du site.";
+                    echo "Ce commentaire a été signalé à l'administrateur du site.";
                 }else {
                     echo ($data->getText());
                 } ;?></p>

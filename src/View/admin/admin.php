@@ -33,7 +33,7 @@ ob_start();
                     <div class="col-sm-12 col-12 box-1"  data-aos="fade-up" data-aos-delay="300">
                         <div class="row box">
                             <div class="col-sm-12 col-12">
-                                <h4>Nombre de signalement : <?= htmlspecialchars($nbReports) ;?></h4>
+                                <h4><a href="signalement-admin">Nombre de signalement : <?= htmlspecialchars($nbReports) ;?></a></h4>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ ob_start();
                     <div class="col-sm-12 col-12 box-1"  data-aos="fade-up" data-aos-delay="300">
                         <div class="row box">
                             <div class="col-sm-12 col-12">
-                                <h4>Nombre de commentaire sur le blog : <?= htmlspecialchars($nbComments) ;?></h4>
+                                <h4><a href="commentaires-admin">Nombre de commentaire sur le blog : <?= htmlspecialchars($nbComments) ;?></a></h4>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ ob_start();
                     <div class="col-sm-12 col-12 box-1"  data-aos="fade-up" data-aos-delay="300">
                         <div class="row box">
                             <div class="col-sm-12 col-12">
-                                <h4>Nombre de chapitres publié : <?= htmlspecialchars($nbChapter) ;?></h4>
+                                <h4><a href="chapitres-admin">Nombre de chapitres publié : <?= htmlspecialchars($nbChapter) ;?></a></h4>
                             </div>
                         </div>
                     </div>

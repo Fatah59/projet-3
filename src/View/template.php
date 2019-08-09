@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--!>
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="public/css/animate.css">
     <link rel="stylesheet" href="public/css/template.css">
 
-    <title>"Projet 3"</title>
+    <title>Jean FORTEROCHE : Le blog !</title>
 </head>
 
 <main>
@@ -64,23 +65,24 @@
     </div>
 </nav>
 
+<!-- Content -->
 <main class="containerpage">
     <?= $content; ?>
 </main>
 
+<!-- Footer -->
 <section class="section-7">
-    <!-- Footer -->
     <footer class="page-footer font-small stylish-color-dark">
         <!-- Footer Links -->
         <div class="container text-center text-md-left">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-lg-5 col-sm-12 mx-auto box-1">
+                <div class="col-lg-6 col-sm-12 mx-auto box-1">
                     <!-- Content -->
                     <a href="accueil"><img src="public/image/footer-logo-jean.png" alt="footer-logo"></a>
                     <p>Vous souhaitez en savoir plus sur moi et mes oeuvres ?</p>
-                    <p>Je vous invite à consulter la rubrique <a href="#">"A propos".</a></p>
+                    <p>Je vous invite à consulter la rubrique <a href="a-propos"><strong>"A propos"</strong>.</a></p>
 
                 </div>
                 <!-- Grid column -->
@@ -101,6 +103,9 @@
                         </li>
                         <li>
                             <a href="contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="desinscription-newsletter">Newsletter</a>
                         </li>
                         <li>
                             <a href="connexion">Connexion</a>
@@ -154,9 +159,10 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>--!>
+<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="public/js/animate.js"></script>
 <script src="public/js/custom.js"></script>

@@ -29,10 +29,7 @@ class ConnexionController
             $_SESSION['connexion-fail']="Login ou mot de passe incorrect";
             header ('Location: connexion');
         }
-
-
         $_SESSION['connexion-success']="Bienvenue sur la page d'administration";
         header('Location: admin');
-
     }
 }

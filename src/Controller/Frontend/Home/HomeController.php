@@ -12,9 +12,4 @@ class HomeController
         $firstChapter = $chapters->getFirstChapterForHomepage();
         require 'src/View/home/home.php';
     }
-    public function getLastChapter(){
-        $lastChapterHome = new ChapterManager();
-        $lastChapter = $lastChapterHome->getLastChapter();
-        require 'src/View/chapter/lastChapter.php';
-    }
 }

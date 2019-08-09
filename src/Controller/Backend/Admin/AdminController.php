@@ -5,8 +5,6 @@ namespace App\Controller\Backend\Admin;
 use App\Model\CommentManager;
 use App\Model\ChapterManager;
 
-
-
 class AdminController
 {
     public function adminConnect(){

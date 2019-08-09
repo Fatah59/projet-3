@@ -7,11 +7,9 @@ use App\Model\ChapterManager;
 
 class ChapterController
 {
-    public function viewChapter($id)
-    {
+    public function viewChapter($id){
         $getChapter = new ChapterManager();
         $result = $getChapter->getChapterWithComments($id);
         require 'src/View/chapter/chapter.php';
     }
-
 }

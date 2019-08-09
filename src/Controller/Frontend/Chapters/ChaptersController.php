@@ -9,7 +9,6 @@ class ChaptersController
     public function viewAllChapters(){
         $chapters = new ChapterManager();
         $result = $chapters->getAllChapters();
-
         require 'src/View/chapter/allChapters.php';
     }
 }

@@ -1,30 +1,31 @@
 <?php
 require 'vendor/autoload.php';
 
-use App\Controller\Frontend\Home\HomeController;
-use App\Controller\Frontend\Chapters\ChaptersController;
-use App\Controller\Frontend\Chapters\ChapterController;
-use App\Controller\Frontend\About\AboutController;
-use App\Controller\Frontend\Contact\ContactController;
-use App\Controller\Frontend\Legalmention\LegalController;
-use App\Controller\Frontend\Cgu\CguController;
-use App\Controller\Frontend\Newsletter\NewsletterController;
-use App\Controller\Frontend\Comment\CommentController;
-use App\Controller\Frontend\Connexion\ConnexionController;
 use App\Controller\Backend\Admin\AdminController;
+use App\Controller\Backend\Chapter\AdminChapterController;
 use App\Controller\Backend\Comment\AdminCommentController;
 use App\Controller\Backend\Disconnect\DisconnectController;
-use App\Controller\Backend\Chapter\AdminChapterController;
 use App\Controller\Backend\Report\ReportController;
+use App\Controller\Frontend\About\AboutController;
+use App\Controller\Frontend\Cgu\CguController;
+use App\Controller\Frontend\Chapters\ChapterController;
+use App\Controller\Frontend\Chapters\ChaptersController;
+use App\Controller\Frontend\Comment\CommentController;
+use App\Controller\Frontend\Connexion\ConnexionController;
+use App\Controller\Frontend\Contact\ContactController;
+use App\Controller\Frontend\Home\HomeController;
+use App\Controller\Frontend\Legalmention\LegalController;
+use App\Controller\Frontend\Newsletter\NewsletterController;
 
 
 session_start();
-
 $url = '';
 
 if (isset($_GET['url'])) {
     $url = $_GET['url'];
 }
+
+/* Frontend Router */
 
 if ($url === 'accueil'){
     $home = new HomeController();
@@ -60,22 +61,41 @@ elseif ($url === 'chapitre'){
     $chapterController = new ChapterController();
     $chapterController->viewChapter($_GET['id']);
 }
-
+/* Adhésion Newsletter + confirmation par email */
 elseif ($url === 'newsletter-add-mail'){
     if (isset($_POST['newsletter-mail'])&& !empty($_POST['newsletter-mail'])){
         if (preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST['newsletter-mail'])){
             $newsletter = new NewsletterController();
             $newsletter->newMail($_POST['newsletter-mail']);
-        } else {
+        }else {
             $_SESSION['newsletter-error']='Veuillez saisir une adresse email valide';
         }
     }else {
         $_SESSION['newsletter-error']='Veuillez saisir une adresse email valide';
     }
 }
+/* Page de désinsciption newsletter */
+elseif ($url === 'desinscription-newsletter'){
+    $unsubscribenews = new NewsletterController();
+    $unsubscribenews->unsubscribePage();
+}
 
+/* Désinscription newsletter */
+elseif ($url === 'newsletter-delete-mail'){
+    if (isset($_POST['newsletter-mail'])&& !empty($_POST['newsletter-mail'])){
+        if (preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST['newsletter-mail'])){
+            $unsubscribed = new NewsletterController();
+            $unsubscribed->unsubscribe($_POST['newsletter-mail']);
+        }else {
+            $_SESSION['newsletter-error']='Veuillez saisir une adresse email valide';
+        }
+    }else {
+        $_SESSION['newsletter-error']='Veuillez saisir une adresse email valide';
+    }
+}
+/* Envoyer un message de contact + un email à l'admin */
 elseif ($url === 'contact-add-msg') {
-    if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['message']) && !empty($_POST['message'])) {
+    if (isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['message']) && !empty($_POST['message'])){
         if (preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])) {
             $contactform = new ContactController();
             $contactform->newContact($_POST['name'], $_POST['email'], $_POST['message']);
@@ -87,7 +107,7 @@ elseif ($url === 'contact-add-msg') {
         $_SESSION['contactmail-error'] = 'Veuillez saisir une adresse email valide';
     }
 }
-
+/* Poster un commentaire */
 elseif ($url === 'comment-post') {
     if (isset($_POST['pseudo']) && !empty($_POST['pseudo']) && isset($_POST['text']) && !empty($_POST['text']) && isset($_POST['chapterId']) && !empty($_POST['chapterId'])){
         $commentpost = new CommentController();
@@ -97,7 +117,7 @@ elseif ($url === 'comment-post') {
         header('Location: chapitre&id='.$_POST['chapterId'].'#commentpost-error');
     }
 }
-
+/* Signaler un commentaire */
 elseif ($url === 'signal-comment'){
     if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
         if (preg_match('#[0-9]+#', $_GET['com_id']) && preg_match('#[0-9]+#', $_GET['chapter_id'])) {
@@ -110,12 +130,12 @@ elseif ($url === 'signal-comment'){
         require 'src/View/error404/error404.php';
     }
 }
-
+/* Page de connexion */
 elseif ($url === 'connexion'){
     $contact = new ConnexionController();
     $contact->connexionPage();
 }
-
+/* Vérification connexion à l'administration */
 elseif ($url === 'admincheck') {
     if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
         $connexionadmin = new ConnexionController();
@@ -126,6 +146,8 @@ elseif ($url === 'admincheck') {
     }
 }
 
+/* Backend router */
+/* Page d'accueil administration */
 elseif ($url === 'admin') {
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])){
         $adminConnect = new AdminController();
@@ -134,12 +156,12 @@ elseif ($url === 'admin') {
         header('Location: connexion');
     }
 }
-
+/* Déconnexion */
 elseif ($url === 'deconnexion'){
     $disconnect = new DisconnectController();
     $disconnect->disconnectUser();
 }
-
+/* Page de gestion des chapitres */
 elseif ($url === 'chapitres-admin'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $chapteredit = new AdminChapterController;
@@ -148,7 +170,7 @@ elseif ($url === 'chapitres-admin'){
         header('Location: connexion');
     }
 }
-
+/* Page ajouter un chapitre */
 elseif ($url === 'ajout-chapitre'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $addchapter = new AdminChapterController();
@@ -157,7 +179,7 @@ elseif ($url === 'ajout-chapitre'){
         header('Location: connexion');
     }
 }
-
+/* Ajouter un chapitre */
 elseif ($url === 'chapter-post') {
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         if (isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['text']) && !empty($_POST['text'])) {
@@ -171,7 +193,7 @@ elseif ($url === 'chapter-post') {
         header('Location: connexion');
     }
 }
-
+/* Page éditer un chapitre */
 elseif ($url === 'editer-chapitre'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $editchapter = new AdminChapterController();
@@ -180,7 +202,7 @@ elseif ($url === 'editer-chapitre'){
         header('Location: connexion');
     }
 }
-
+/* Éditer un chapitre */
 elseif ($url === 'chapter-edited') {
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])){
         if (isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['text']) && !empty($_POST['text']) && isset($_POST['chapterId']) && !empty($_POST['chapterId'])){
@@ -194,7 +216,7 @@ elseif ($url === 'chapter-edited') {
         header('Location: connexion');
     }
 }
-
+/* Supprimer un chapitre */
 elseif ($url === 'supprimer-chapitre'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $deletechapter = new AdminChapterController();
@@ -203,7 +225,7 @@ elseif ($url === 'supprimer-chapitre'){
         header('Location: connexion');
     }
 }
-
+/* Page commentaires */
 elseif ($url === 'commentaires-admin'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $comment = new AdminCommentController;
@@ -212,9 +234,7 @@ elseif ($url === 'commentaires-admin'){
         header('Location: connexion');
     }
 }
-
-
-
+/* Page des signalement */
 elseif ($url === 'signalement-admin'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $report = new ReportController;
@@ -223,7 +243,7 @@ elseif ($url === 'signalement-admin'){
         header('Location: connexion');
     }
 }
-
+/* Retirer un signalement */
 elseif ($url === 'retirer-signalement'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
@@ -240,7 +260,7 @@ elseif ($url === 'retirer-signalement'){
         header('Location: connexion');
     }
 }
-
+/* Modérer un signalement */
 elseif ($url === 'moderer-signalement'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
@@ -257,10 +277,7 @@ elseif ($url === 'moderer-signalement'){
         header('Location: connexion');
     }
 }
-
+/* Page d'erreur 404 */
 else {
     require 'src/View/error404/error404.php';
 }
-
-
-

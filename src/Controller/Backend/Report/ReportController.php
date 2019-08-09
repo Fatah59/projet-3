@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller\Backend\Report;
-
 
 use App\Model\CommentManager;
 
@@ -13,5 +11,4 @@ class ReportController
         $result = $reportdisplay->getAllReport();
         require 'src/View/admin/report/adminReport.php';
     }
-
 }

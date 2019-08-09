@@ -6,13 +6,11 @@ use \PDO;
 class ChapterManager extends DbManager
 {
     private $db;
-    public function __construct()
-    {
+    public function __construct(){
         $this->db = self::dbConnect();
     }
 
-    public function getChaptersForHomepage()
-    {
+    public function getChaptersForHomepage(){
         $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 0,3' );
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
@@ -24,16 +22,14 @@ class ChapterManager extends DbManager
         return $chapters;
     }
 
-    public function getFirstChapterForHomepage()
-    {
+    public function getFirstChapterForHomepage(){
         $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date ASC LIMIT 0,1' );
         $result = $req->fetch(PDO::FETCH_ASSOC);
         $chapter = new Chapter($result);
         return $chapter;
     }
 
-    public function getAllChapters()
-    {
+    public function getAllChapters(){
         $req = $this->db->query('SELECT id, title, text, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh:%i:%s") AS creationDate FROM chapter ORDER BY creation_date' );
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
@@ -45,8 +41,7 @@ class ChapterManager extends DbManager
         return $chapters;
     }
 
-    public function getChapterWithComments($id)
-    {
+    public function getChapterWithComments($id){
         $req = $this->db->prepare('SELECT ch.id AS ch_id, ch.title, ch.text AS ch_text, DATE_FORMAT(ch.creation_date, "%d/%m/%Y à %Hh:%i") AS creation_date, com.id AS com_id, com.pseudo, com.text AS com_text, com.report, com.moderate, DATE_FORMAT(com.creationDate, "%d/%m/%Y à %Hh:%i") AS com_creationDate FROM chapter ch LEFT JOIN comment com ON com.chapterId=ch.id WHERE ch.id=?');
         $req->execute([$id]);
         $result = $req->fetchAll(PDO::FETCH_ASSOC);

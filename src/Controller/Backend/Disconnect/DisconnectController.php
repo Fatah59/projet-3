@@ -8,5 +8,4 @@ class DisconnectController
         unset($_SESSION['id']);
         header ('Location: accueil');
     }
-
 }
