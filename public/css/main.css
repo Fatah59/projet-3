@@ -1,24 +1,154 @@
-.chaptershome {
-    margin-left: 100px;
-}
-
-.chapterspage, .onechapter, .about {
-    margin: 50px 450px 50px 450px;
-}
 
 .btn-success {
-    color: #fff;
-    font-size: 18px;
-    padding: 5px 20px;
-    background-color: #2d9ddc;
-    border-color: #2d9ddc;
-    border-radius: 100px;
+    color: #fff !important;
+    font-size: 18px !important;
+    padding: 5px 20px !important;
+    background-color: #2d9ddc !important;
+    border-color: #2d9ddc !important;
+    border-radius: 100px !important;
 }
 
 .btn-success:hover,
 .btn-success:not(:disabled):not(.disabled):active {
-    background-color: #000;
-    border-color: #000;
+    color: #fff !important;
+    background-color: #000 !important;
+    border-color: #000 !important;
 }
 
+.section-4 .heading .btn-success {
+    color: #fff !important;
+    padding: 12px 35px !important;
+    letter-spacing: 1px !important;
+    border-radius: 0 !important;
+    background-color: #2d9ddc !important;
+    border-color: #2d9ddc !important;
+    text-transform: uppercase !important;
+}
 
+.section-4 .btn-success:hover,
+.btn-success:not(:disabled):not(.disabled):active {
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+
+.fa-exclamation-triangle {
+    color: #f7f7f7 !important;
+    font-size: 15px !important;
+}
+
+.fa-exclamation-triangle:hover {
+    color: #007bff!important;
+}
+
+.jumbotron .btn-success,
+.jumbotron .btn-success:not(:disabled):not(.disabled):active {
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border-radius: 100px !important;
+    padding: 8px 35px !important;
+    background-color: #2d9ddc !important;
+    border-color: #2d9ddc !important;
+    border: 2px solid #f8f9fa !important;
+}
+
+.jumbotron .btn-success:hover {
+    color: #fff !important;
+    background-color: transparent !important;
+    border: 2px solid #2d9ddc !important;
+}
+
+.section-6 .btn-info:hover {
+    color: #ffffff;
+    background-color: #2d9ddc !important;
+    border: 1px solid #2d9ddc !important;
+}
+
+.page-footer ul > li a:hover {
+    color: #2d9ddc !important;
+}
+
+a:hover {
+    color: #2d9ddc !important;
+    text-decoration: none !important;
+}
+
+.jumbotron .btn-success:hover {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #2d9ddc !important;
+}
+
+.miniheader {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    text-transform: uppercase;
+    background-image: url(../image/index-alaska.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.miniheader h1{
+    color: #ffffff;
+}
+
+.miniheader .btn-success,
+.miniheader .btn-success:not(:disabled):not(.disabled):active {
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 8px 35px;
+    background-color: #2d9ddc;
+    border-color: #2d9ddc;
+    border: 2px solid #f8f9fa !important;
+}
+
+.miniheader .btn-success:hover {
+    color: #fff !important;
+    background-color: transparent !important;
+    border: 2px solid #2d9ddc !important;
+}
+
+#contact .btn-primary:hover {
+    color: #fff !important;
+    background-color: #2d9ddc !important;
+    border-color: #2d9ddc !important;
+}
+
+.admintitle {
+    text-align: center;
+    margin: 20px;
+}
+
+.report-table, .comment-table {
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+}
+
+.btn-primary:hover{
+    color: #007bff !important;
+    background-color: transparent !important;
+    border: 1px solid #007bff !important;
+}
+
+.btn-danger:hover{
+    color: #dc3545 !important;
+    background-color: transparent;
+    border: 1px solid #dc3545;
+}
+
+.footer-copyright p a {
+    color: #2d9ddc !important;
+}

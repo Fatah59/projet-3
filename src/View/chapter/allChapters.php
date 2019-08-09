@@ -1,14 +1,9 @@
 <?php
 ob_start();
 ?>
-
-<style>
-    .jumbotron {width: 100%;height: 250px;}
-    .jumbotron h2 {padding-bottom: 0;}
-</style>
 <!--Section-1-->
 <section class="section-1">
-    <div class="jumbotron d-flex align-items-center">
+    <div class="miniheader d-flex align-items-center">
         <div class="gradient"></div>
         <div class="container-fluid content">
             <h1 data-aos="fade-right" data-aos-delay="300">Chapitres</h1>
@@ -16,19 +11,24 @@ ob_start();
     </div>
 </section>
 
-
-<div class="chapterspage">
+<section class="services">
     <?php foreach ($result as $data): ?>
-        <h3><p><?= htmlspecialchars($data->getTitle());?></p></h3>
-    <p><?= substr( htmlspecialchars($data->getText()), 0, 450)?>...</p>
-        <p><?= htmlspecialchars($data->getCreationDate());?></p>
-        <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success">Lire la suite</a>
-    <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-12 box-1"  data-aos="fade-up" data-aos-delay="300">
+                    <div class="row box">
+                        <div class="col-sm-12 col-12">
+                            <h3><?= htmlspecialchars($data->getTitle());?></h3>
+                            <p><?= substr ($data->getText(), 0, 450)?>...</p>
+                            <p><?= htmlspecialchars($data->getCreationDate());?></p>
+                            <a href="chapitre&id=<?= $data->getId();?>" class="btn btn-success">Lire la suite</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endforeach; ?>
-</div>
-
-
-
+</section>
 
 <?php
 $content = ob_get_clean();
