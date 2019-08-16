@@ -11,6 +11,9 @@ ob_start();
     </div>
 </section>
 <div class="container">
+    <div class="admintitle">
+        <h1 data-aos="fade-right" data-aos-delay="300">Éditer votre chapitre</h1>
+    </div>
 
     <div>
         <?php if(isset($_SESSION['chapteredit-error'])): ?>
