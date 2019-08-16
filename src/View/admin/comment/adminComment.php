@@ -26,7 +26,7 @@ ob_start();
                         <table class="comment-table">
                             <thead>
                             <tr>
-                                <th class="displayed-comment"><strong>Commentaire signalé</strong></th>
+                                <th class="displayed-comment"><strong>Commentaires</strong></th>
                                 <th class="moderate-action"><strong>Action</strong></th>
                             </tr>
                             </thead>
