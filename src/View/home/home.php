@@ -11,7 +11,6 @@ ob_start();
             <h4 data-aos="fade-up" data-aos-delay="500">Un Billet simple pour l'Alaska</h4>
             <p><h4 data-aos="fade-up" data-aos-delay="500">Chapitre après chapitre</h4></p>
             <p data-aos="fade-up" data-aos-delay="700"><a href="chapitre&id=<?= $result [0]->getId() ?>" class="btn btn-success">Lire le dernier chapitre</a></p>
-
         </div>
     </div>
 </section>

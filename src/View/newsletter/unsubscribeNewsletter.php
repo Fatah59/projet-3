@@ -22,7 +22,6 @@ ob_start();
             <div class="col-lg-6 col-sm-12 col1">
                 <form method="post" action="newsletter-delete-mail">
                     <div class="input-group">
-
                         <input name="newsletter-mail" id="newsletter-mail" type="email" placeholder="Entrez votre email" required>
                         <button class="btn btn-info" type="submit">valider</button>
                     </div>

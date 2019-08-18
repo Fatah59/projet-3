@@ -1,7 +1,6 @@
 <?php
 ob_start();
 ?>
-
     <section class="section-1">
         <div class="miniheader d-flex align-items-center">
             <div class="gradient"></div>
@@ -11,8 +10,6 @@ ob_start();
             </div>
         </div>
     </section>
-
-
 
     <section class="services">
         <?php foreach ($result as $data): ?>
@@ -29,14 +26,12 @@ ob_start();
                         <?php unset($_SESSION['chapterpost-success']); ?>
                     <?php endif; ?>
                 </div>
-
                 <div>
                     <?php if(isset($_SESSION['chapterdeleted-success'])): ?>
                         <p><div class="alert alert-success col-xs-10 col-md-12 align-self-center text-center"><?= $_SESSION['chapterdeleted-success'] ?></div></p>
                         <?php unset($_SESSION['chapterdeleted-success']); ?>
                     <?php endif; ?>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-12 col-12 box-1"  data-aos="fade-up" data-aos-delay="300">
                         <div class="row box">

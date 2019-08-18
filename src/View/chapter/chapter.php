@@ -52,7 +52,6 @@ ob_start();
             <?php unset($_SESSION['signalcomment-success']); ?>
         <?php endif; ?>
 
-
         <?php foreach ($result->getComments() as $data) : ?>
             <p><strong><u><?= $data->getPseudo();?></u></strong></p>
             <p><?php if ($data->getModerate()){
