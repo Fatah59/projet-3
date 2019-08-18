@@ -64,7 +64,7 @@ class Email
             $mail->Body = 'Bonjour,<br />
             <br />
             Je vous informe que vous êtes bien inscrit(e) à ma Newsletter. <br /><br />
-            <p>Vous pouvez vous désinscrire à tout moment en cliquant <a href="localhost/projet3/desinscription-newsletter">ici</a> </p><br />';
+            <p>Vous pouvez vous désinscrire à tout moment en cliquant <a href="http://projet-3.derradjfatah.com/desinscription-newsletter">ici</a> </p><br />';
             $mail->isHTML(true);
             $mail->send();
             echo 'Message has been sent';
