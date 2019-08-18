@@ -6,7 +6,7 @@ ob_start();
         <div class="miniheader d-flex align-items-center">
             <div class="gradient"></div>
             <div class="container-fluid content">
-                <h1 data-aos="fade-right" data-aos-delay="300">Chapitres</h1>
+                <h2 data-aos="fade-right" data-aos-delay="300">Chapitres</h2>
                 <p data-aos="fade-right" data-aos-delay="300"><a href="ajout-chapitre" class="btn btn-success">Ajouter un chapitre</a></p>
             </div>
         </div>
@@ -42,7 +42,7 @@ ob_start();
                         <div class="row box">
                             <div class="col-sm-12 col-12">
                                 <h3><?= htmlspecialchars($data->getTitle());?></h3>
-                                <p><?= substr($data->getText(), 0, 450)?>...</p>
+                                <p><?= substr($data->getText(), 0, 250)?>...</p>
                                 <p><?= htmlspecialchars($data->getCreationDate());?></p>
                                 <input type="hidden" name="chapterId" value="<?php echo $data->getId(); ?>"/>
                                 <a href="editer-chapitre&id=<?= $data->getId();?>" class="btn btn-primary" onclick="return confirm('Êtes-vous sûr de vouloir éditer ce chapitre ?')">Éditer</a>

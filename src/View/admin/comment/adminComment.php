@@ -6,7 +6,7 @@ ob_start();
     <div class="miniheader d-flex align-items-center">
         <div class="gradient"></div>
         <div class="container-fluid content">
-            <h1 data-aos="fade-right" data-aos-delay="300">Commentaires</h1>
+            <h2 data-aos="fade-right" data-aos-delay="300">Commentaires</h2>
         </div>
     </div>
 </section>
@@ -22,7 +22,7 @@ ob_start();
                         </div>
                         <?php unset($_SESSION['moderatesignalcomment-success']); ?>
                     <?php endif; ?>
-                    <div class="col-sm-12 col-12">
+                    <div class="table-responsive">
                         <table class="comment-table">
                             <thead>
                             <tr>
@@ -36,7 +36,7 @@ ob_start();
                                         <?= htmlspecialchars($data->getText());?>
                                     </td>
                                     <td>
-                                        <a href="moderer-signalement&com_id=<?= $data->getId(); ?>&chapter_id=<?= $data->getChapterId(); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir modérer ce commentaire ?')">Modérer le commentaire</a>
+                                        <a href="moderer-commentaire&com_id=<?= $data->getId(); ?>&chapter_id=<?= $data->getChapterId(); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir modérer ce commentaire ?')">Modérer le commentaire</a>
                                     </td>
                                 </tr></tbody>
                             <?php endforeach;?>

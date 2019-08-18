@@ -15,7 +15,7 @@ class Email
             $mail->SMTPDebug = 2;
             $mail->isSMTP();
             //$mail->isSendmail();
-            $mail->Host = 'santa.o2switch.net';
+            $mail->Host = Login::HOST;
             $mail->SMTPAuth = true;
             $mail->Username = Login::EMAIL;
             $mail->Password = Login::PASSWORD;
@@ -23,8 +23,8 @@ class Email
             $mail->Port = 465;
             $mail->setLanguage('fr', 'src/vendor/phpmailer/phpmailer/language');
 
-            $mail->setFrom('projet3@derradjfatah.com', 'Jean FORTEROCHE : Le blog !');
-            $mail->addAddress('projet3@derradjfatah.com');
+            $mail->setFrom(Login::EMAIL, 'Jean FORTEROCHE : Le blog !');
+            $mail->addAddress(Login::EMAIL);
 
             $mail->Subject = 'Vous avez recu un nouveau message !';
             $mail->Body = ' Email du contact : ' . $email . ' <br />
@@ -49,7 +49,7 @@ class Email
             $mail->SMTPDebug = 2;
             $mail->isSMTP();
             //$mail->isSendmail();
-            $mail->Host = 'santa.o2switch.net';
+            $mail->Host = Login::HOST;
             $mail->SMTPAuth = true;
             $mail->Username = Login::EMAIL;
             $mail->Password = Login::PASSWORD;
@@ -57,7 +57,7 @@ class Email
             $mail->Port = 465;
             $mail->setLanguage('fr', 'src/vendor/phpmailer/phpmailer/language');
 
-            $mail->setFrom('projet3@derradjfatah.com', 'Jean FORTEROCHE : Le blog !');
+            $mail->setFrom(Login::EMAIL, 'Jean FORTEROCHE : Le blog !');
             $mail->addAddress($newMail);
 
             $mail->Subject = 'Inscription Newsletter Jean FORTEROCHE : Le blog !';

@@ -34,6 +34,7 @@
 .fa-exclamation-triangle {
     color: #f7f7f7 !important;
     font-size: 15px !important;
+    padding-bottom: 0px !important;
 }
 
 .fa-exclamation-triangle:hover {
@@ -91,6 +92,10 @@ a:hover {
 }
 
 .miniheader h1{
+    color: #ffffff;
+}
+
+.miniheader h2{
     color: #ffffff;
 }
 
