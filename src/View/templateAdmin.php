@@ -23,18 +23,8 @@
 <header class="header bg">
     <div class="container text-white">
         <div class="row">
-            <div class="col-sm-4 align-self-center text-left">
-                <h6>"L'écriture ma passion !"</h6>
-            </div>
-            <div class="col-sm-4 col-12 align-self-center box-1 text-center">
+            <div class="col-sm-12 col-12 align-self-center box-1 text-center">
                 <a class="navbar-brand" href="accueil"><img src="public/image/header-logo-jean.jpg" alt="logo"></a>
-            </div>
-            <div class="col-sm-4 align-self-center text-right">
-                <div class="deconnexion">
-
-                    <a href="deconnexion" class="btn btn-primary btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?')">Déconnexion</a>
-
-                </div>
             </div>
         </div>
     </div>
@@ -59,6 +49,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="signalement-admin">Signalement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="deconnexion" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?')">Déconnexion</a>
                 </li>
             </ul>
         </div>

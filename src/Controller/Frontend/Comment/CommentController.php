@@ -47,6 +47,16 @@ class CommentController
         $_SESSION['moderatesignalcomment-success']="Le commentaire a bien été modéré";
         header('Location: signalement-admin');
     }
+
+    public function moderateComment($com_id, $chapter_id){
+        $commentmoderate = new Comment();
+        $commentmoderate->setId($com_id);
+        $commentmoderate->setChapterId($chapter_id);
+        $signalmoderate = new CommentManager();
+        $signalmoderate->moderateSignalComment($commentmoderate);
+        $_SESSION['moderatesignalcomment-success']="Le commentaire a bien été modéré";
+        header('Location: commentaires-admin');
+    }
 }
 
 

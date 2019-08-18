@@ -225,7 +225,7 @@ elseif ($url === 'supprimer-chapitre'){
         header('Location: connexion');
     }
 }
-/* Page commentaires */
+/* Page des commentaires */
 elseif ($url === 'commentaires-admin'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $comment = new AdminCommentController;
@@ -234,7 +234,7 @@ elseif ($url === 'commentaires-admin'){
         header('Location: connexion');
     }
 }
-/* Page des signalement */
+/* Page des signalements */
 elseif ($url === 'signalement-admin'){
     if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         $report = new ReportController;
@@ -277,6 +277,25 @@ elseif ($url === 'moderer-signalement'){
         header('Location: connexion');
     }
 }
+
+/* Modérer un commentaire */
+elseif ($url === 'moderer-commentaire'){
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        if (isset($_GET['com_id']) && !empty($_GET['com_id']) && isset($_GET['chapter_id']) && !empty($_GET['chapter_id'])) {
+            if (preg_match('#[0-9]+#', $_GET['com_id']) && preg_match('#[0-9]+#', $_GET['chapter_id'])) {
+                $signal = new CommentController();
+                $signal->moderateComment($_GET['com_id'], $_GET['chapter_id']);
+            }else {
+                require 'src/View/error404/error404.php';
+            }
+        }else {
+            require 'src/View/error404/error404.php';
+        }
+    }else {
+        header('Location: connexion');
+    }
+}
+
 /* Page d'erreur 404 */
 else {
     require 'src/View/error404/error404.php';

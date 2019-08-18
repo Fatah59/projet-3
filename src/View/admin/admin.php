@@ -10,13 +10,13 @@ ob_start();
         <div class="miniheader d-flex align-items-center">
             <div class="gradient"></div>
             <div class="container-fluid content">
-                <h1 data-aos="fade-right" data-aos-delay="300">Administration</h1>
+                <h2 data-aos="fade-right" data-aos-delay="300">Administration</h2>
             </div>
         </div>
     </section>
     <div class="container">
         <div class="admintitle">
-            <h1 data-aos="fade-right" data-aos-delay="300">Tableau de bord</h1>
+            <h2 data-aos="fade-right" data-aos-delay="300">Tableau de bord</h2>
         </div>
         <div class="container">
             <?php if (isset($_SESSION['connexion-success'])): ?>

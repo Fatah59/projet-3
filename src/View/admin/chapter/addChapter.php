@@ -6,13 +6,13 @@ ob_start();
     <div class="miniheader d-flex align-items-center">
         <div class="gradient"></div>
         <div class="container-fluid content">
-            <h1 data-aos="fade-right" data-aos-delay="300">Chapitres</h1>
+            <h2 data-aos="fade-right" data-aos-delay="300">Chapitres</h2>
         </div>
     </div>
 </section>
 <div class="container">
     <div class="admintitle">
-        <h1 data-aos="fade-right" data-aos-delay="300">Ajouter un nouveau chapitre</h1>
+        <h2 data-aos="fade-right" data-aos-delay="300">Ajouter un nouveau chapitre</h2>
     </div>
 
     <div>

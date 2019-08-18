@@ -6,7 +6,7 @@ ob_start();
         <div class="miniheader d-flex align-items-center">
             <div class="gradient"></div>
             <div class="container-fluid content">
-                <h1 data-aos="fade-right" data-aos-delay="300">Signalement</h1>
+                <h2 data-aos="fade-right" data-aos-delay="300">Signalement</h2>
             </div>
         </div>
     </section>
@@ -30,7 +30,7 @@ ob_start();
                                 </div>
                                 <?php unset($_SESSION['moderatesignalcomment-success']); ?>
                             <?php endif; ?>
-                            <div class="col-sm-12 col-12">
+                            <div class="table-responsive">
                                 <table class="report-table">
                                     <thead>
                                     <tr>
