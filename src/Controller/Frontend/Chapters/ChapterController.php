@@ -4,7 +4,6 @@ namespace App\Controller\Frontend\Chapters;
 
 use App\Model\ChapterManager;
 
-
 class ChapterController
 {
     public function viewChapter($id){
