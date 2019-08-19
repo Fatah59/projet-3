@@ -38,7 +38,7 @@
 }
 
 .fa-exclamation-triangle:hover {
-    color: #007bff!important;
+    color: #2d9ddc !important;
 }
 
 .jumbotron .btn-success,
@@ -139,7 +139,7 @@ a:hover {
 table, td, th {
     border: 1px solid black;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 .btn-primary:hover{
@@ -156,4 +156,13 @@ table, td, th {
 
 .footer-copyright p a {
     color: #2d9ddc !important;
+}
+
+/*--responsive--*/
+
+@media (max-width: 767px) {
+    .disconnect {
+        position: relative;
+        top: -11px;
+    }
 }
